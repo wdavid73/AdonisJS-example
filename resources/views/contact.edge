@@ -1,0 +1,17 @@
+@layout('layouts.main')
+
+@section('title')
+    Contact
+@endsection
+
+@section('content')
+<form action="" method="">
+    <div class="form-group form-contact col-7" style="margin : 0 auto">
+        <input type="text" class="form-control mt-3"  placeholder="Full Name" id="name">
+        <input type="number" class="form-control mt-3"placeholder="Cellphone" id="cellphone">
+        <label for="" style="color:white" class="mt-3">About:</label>
+        <textarea class="form-control" rows="3" id="about"></textarea>
+        <input type="submit" value="Submit" class="btn btn-warning btn-block mt-2">
+    </div>
+</form>
+@endsection

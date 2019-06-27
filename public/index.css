@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+.contenido{
+    margin: 0 auto;
+   
+}
+h1,h3{
+    text-align: center
+}
+p{
+    font-size: 20px;
+    text-align: center;
+}
+
+.links li>a{
+    color:white;
+    text-decoration: none;
+    font-family: Lobster;
+    font-size: 20px;
+    animation: slideUp 1s cubic-bezier(0.19, 1, 0.30, 1) 1.3s forwards;
+}
+h1, h3, p{
+    color : white;
+    max-width: 100%;
+    width: 100%;
+    text-justify: auto;
+    font-family: Lobster;
+    animation: slideUp 1s cubic-bezier(0.19, 1, 0.30, 1) 1.3s forwards;
+}
+
+.logo-cm{
+    display: flex;
+    justify-content: center;
+}
