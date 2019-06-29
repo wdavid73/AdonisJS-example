@@ -1,5 +1,7 @@
 'use strict'
 
+const Alquiler = use('App/Models/Alquiler')
+
 /** @typedef {import('@adonisjs/framework/src/Request')} Request */
 /** @typedef {import('@adonisjs/framework/src/Response')} Response */
 /** @typedef {import('@adonisjs/framework/src/View')} View */
@@ -34,6 +36,8 @@ class AlquilerController {
    */
   async create ({ request, response, view }) {
 
+    return view.render('alquileres.form')
+    
   }
 
   /**
@@ -45,6 +49,18 @@ class AlquilerController {
    * @param {Response} ctx.response
    */
   async store ({ request, response }) {
+
+    const alquiler = new Alquiler()
+    alquiler.date_delivery = request.input('date_delivery')
+    alquiler.return_date = request.input('return_date')
+    alquiler.value = request.input('value')
+
+    await alquiler.save()
+
+    return response.redirect('/alquileres')
+
+    /*const alquiler = await Alquiler.create(request.only(['date_delivery' , 'return_date' , 'value']))
+    return response.redirect('alquileres.index')*/
 
   }
 
