@@ -7,10 +7,9 @@ class AlquileresSchema extends Schema {
   up () {
     this.create('alquileres', (table) => {
       table.increments()
-      table.string("tipo" , 50).notNullable()
-      table.date("fecha_entrega").notNullable()
-      table.date("fecha_devolcion").notNullable()
-      table.decimal("valor").notNullable()
+      table.date('date_delivery').notNullable()
+      table.date('return_date').notNullable()
+      table.integer('value').notNullable()
       table.timestamps()
     })
   }
