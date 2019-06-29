@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+.contenido{
+    margin: 0 auto;
+   
+}
+
+label{
+    color:white;
+    font-family: Lobster;
+    font-size: 20px;
+}
+
+h1 ,h2{
+    color:white;
+    text-align: center;
+    font-family: Lobster;
+}
+
+p{
+    color:white;
+    font-family: Lobster;
+    font-size: 20px;
+    text-decoration: none; 
+    text-justify: center
+}
+
+.card{
+    width: 40%;
+    margin: 30px auto auto;
+    
+}
+
+#index-alquileres ul>li>a{
+    color:white;
+    font-family: Lobster;
+    font-size: 30px;
+    text-decoration: none;
+}

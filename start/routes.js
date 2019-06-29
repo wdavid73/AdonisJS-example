@@ -18,5 +18,10 @@ const Route = use('Route')
 
 Route.on('/').render('index')
 Route.on('/contact').render('contact').as('contact')
+
+/* ### Alquileres ### */
+
+
 Route.get('/alquileres' , 'AlquilerController.index')
-//Route.on('/alquileres').render('alquileres').as('alquileres')
+Route.on('/alquileres/registro').render('alquileres.registro').as('registro_alquileres')
+Route.on('/alquileres/all').render('alquileres.all').as('all_alquileres')

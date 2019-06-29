@@ -19,7 +19,7 @@ class AlquilerController {
    */
   async index ({ request, response, view }) {
 
-    return view.render('alquileres')
+    return view.render('alquileres.index')
 
   }
 
@@ -33,6 +33,7 @@ class AlquilerController {
    * @param {View} ctx.view
    */
   async create ({ request, response, view }) {
+
   }
 
   /**
@@ -44,6 +45,7 @@ class AlquilerController {
    * @param {Response} ctx.response
    */
   async store ({ request, response }) {
+
   }
 
   /**
