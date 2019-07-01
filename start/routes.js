@@ -38,6 +38,10 @@ Route.group(() => {
     Route.delete('des/:id' , 'AlquilerController.destroy')
 }).prefix('alquileres')
 
+/* $$$ Registro de Clientes $$$ */
+
+Route.on('/clientes').render('clientes.index')
+
 
 
 

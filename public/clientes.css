@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+.contenido{
+    margin: 0 auto;
+   
+}
+
+h1{
+    color : white;
+}
+
+.cliente-link ul>li>a{
+    color:white;
+    text-decoration: none;
+}
