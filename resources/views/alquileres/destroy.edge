@@ -1,0 +1,36 @@
+@layout('layouts.main')
+
+@section('style-extras')
+  {{style('alquileres')}}
+@endsection
+
+@section('title')
+  Registro de Alquiler
+@endsection
+
+@section('content')
+  
+  <div class="form-alquiler">
+    <div class="card text-white bg-dark">
+      <h2 class="card-header">Borrado Permanente</h5>
+      <div class="card-body">
+
+      <form action="{{ ' /alquileres/des/'+alquileres_id.id+'?_method=DELETE' }}" method="POST">
+            {{ csrfField() }}
+            <div class="form-group">
+            <h2>Esta Seguro que desea borrar este Alquiler #{{alquileres_id.id}}</h2>
+                <span>
+                    <h4>Informacion:</h4>
+                    Fecha de Entrega : {{alquileres_id.date_delivery}} <br>
+                    Fecha de Devolucion : {{alquileres_id.return_date}} <br>
+                    Valor del Alquiler : {{alquileres_id.value}} <br>    
+                </span>
+
+                <input type="submit" class="btn btn-danger btn-block mt-3" value="SI">
+                <a class="btn btn-success btn-block" href="/alquileres/all" style="text-decoration: none">No</a>
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
+@endsection

@@ -23,11 +23,19 @@ Route.on('/contact').render('contact').as('contact')
 //Routing Usando Route.group
 Route.group(() => {
     Route.get('/', 'AlquilerController.index').as('home.alquileres')
+    //Registro
     Route.get('form' , 'AlquilerController.create')
     Route.post('registro' , 'AlquilerController.store')
     Route.get('all' , 'AlquilerController.all')
+    //ACtualizar
     Route.get('edit/:id' , 'AlquilerController.edit')
-    Route.put('/:id' ,'AlquilerController.update')
+    Route.put('update/:id' ,'AlquilerController.update')
+    //Borrado Logico
+    Route.get('delete/:id' , 'AlquilerController.view_delete_l')
+    Route.put('del/:id','AlquilerController.delete_l')
+    //Borrado Permanente
+    Route.get('destroy/:id' , 'AlquilerController.view_destroy')
+    Route.delete('des/:id' , 'AlquilerController.destroy')
 }).prefix('alquileres')
 
 

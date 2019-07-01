@@ -25,14 +25,6 @@ class AlquilerController {
 
   }
 
-  async all ({view}){
-
-    const alquileres = await Alquiler.all()
-    //console.log(alquileres.toJSON())
-    console.log(alquileres.toJSON())
-    return view.render('alquileres.all' , {alquileres : alquileres.toJSON() })
-  }
-
   /**
    * Render a form to be used for creating a new alquiler.
    * GET alquilers/create
@@ -121,6 +113,31 @@ class AlquilerController {
 
   }
 
+  async all ({view}){
+
+    const alquileres = await Alquiler.all()
+    //console.log(alquileres.toJSON())
+    console.log(alquileres.toJSON())
+    return view.render('alquileres.all' , {alquileres : alquileres.toJSON() })
+  }
+
+  async view_delete_l ({params , view }) {
+    const alquileres_id = await Alquiler.find(params.id)
+    return view.render('alquileres.delete' , {alquileres_id})
+  }
+
+  async delete_l ({params , request , response }){
+
+    const alquiler = await Alquiler.find(params.id)
+    alquiler.state = 0
+    await alquiler.save()
+    return response.redirect('/alquileres/all')
+  }
+  
+  async view_destroy ({params , view }) {
+    const alquileres_id = await Alquiler.find(params.id)
+    return view.render('alquileres.destroy' , {alquileres_id})
+  }
   /**
    * Delete a alquiler with id.
    * DELETE alquilers/:id
@@ -130,6 +147,9 @@ class AlquilerController {
    * @param {Response} ctx.response
    */
   async destroy ({ params, request, response }) {
+    const alquiler = await Alquiler.find(params.id)
+    await alquiler.delete()
+    return response.redirect('/alquileres/all')
   }
 }
 
