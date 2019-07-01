@@ -94,6 +94,9 @@ class AlquilerController {
    * @param {View} ctx.view
    */
   async edit ({ params, request, response, view }) {
+    const alquileres_id = await Alquiler.find(params.id)
+    return view.render('alquileres.edit' , {alquileres_id})
+
   }
 
   /**
@@ -105,6 +108,17 @@ class AlquilerController {
    * @param {Response} ctx.response
    */
   async update ({ params, request, response }) {
+
+    const alquiler = await Alquiler.find(params.id)
+    alquiler.date_delivery = request.input('date_delivery')
+    alquiler.return_date = request.input('return_date')
+    alquiler.value = request.input('value')
+
+    await alquiler.save()
+
+    return response.redirect('/alquileres/all')
+
+
   }
 
   /**

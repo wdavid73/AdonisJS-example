@@ -1,0 +1,48 @@
+@layout('layouts.main')
+
+@section('style-extras')
+  {{style('alquileres')}}
+@endsection
+
+@section('title')
+  Registro de Alquiler
+@endsection
+
+@section('content')
+  
+  <div class="form-alquiler">
+    <div class="card text-white bg-dark">
+      <h2 class="card-header">Actualizacion de Alquileres</h5>
+      <div class="card-body">
+
+      <form action="{{ ' /alquileres/'+alquileres_id.id+'?_method=PUT' }}" method="POST">
+            {{ csrfField() }}
+            <div class="form-group">
+
+                <label for="" class="mt-3">Fecha de Entrega</label>
+                <input type="text" class="form-control" value="{{ alquileres_id.date_delivery }}"> <!--Editar Formato de fecha en un input text-->
+                <input type="date" class="form-control mt-1" name="date_delivery" required>
+
+                <label for="" class="mt-3">Fecha de Devolucion</label>
+                <input type="text" class="form-control" value="{{ alquileres_id.return_date }}">
+                <input type="date" class="form-control mt-1" name="return_date" required>
+
+            <input type="number" class="form-control mt-3" placeholder="Valor del Alquiler" name="value" value="{{alquileres_id.value}}" required>
+
+                <input type="submit" onclick="displayAlert()" class="btn btn-primary btn-block mt-3" value="Update">
+            </div>
+        </form>
+
+       
+  
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const displayAlert = () >{
+      alert('Informacion Actualizada')
+    };
+  </script>
+
+@endsection

@@ -31,9 +31,9 @@
             <td class="table-light">{{ alq.return_date }}</td>
             <td class="table-light">{{ alq.value }}</td>
             <td class="table-light">
-                <button class="btn btn-primary mr-2 mt-2 mb-2 ml-2"><a href="" style="text-decoration: none">Actualizar</a></button>
-                <button class="btn btn-warning mr-2 mt-2 mb-2 ml-2"><a href="" style="text-decoration: none">[L]Borrar</a></button>
-                <button class="btn btn-danger mr-2 mt-2 mb-2 ml-2"><a href="" style="text-decoration: none">[S]Borrar</a></button>
+                <a href="/alquileres/edit/{{alq.id}}" class="btn btn-primary mr-2 mt-2 mb-2 ml-2" style="text-decoration: none">Actualizar</a>
+                <a href="" class="btn btn-warning mr-2 mt-2 mb-2 ml-2" style="text-decoration: none">[L]Borrar</a>
+                <a href="" class="btn btn-danger mr-2 mt-2 mb-2 ml-2" style="text-decoration: none">[S]Borrar</a>
             </td>
             </tr>
           @else

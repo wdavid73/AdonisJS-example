@@ -26,6 +26,8 @@ Route.group(() => {
     Route.get('form' , 'AlquilerController.create')
     Route.post('registro' , 'AlquilerController.store')
     Route.get('all' , 'AlquilerController.all')
+    Route.get('edit/:id' , 'AlquilerController.edit')
+    Route.put('/:id' ,'AlquilerController.update')
 }).prefix('alquileres')
 
 

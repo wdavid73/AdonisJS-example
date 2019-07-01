@@ -12,10 +12,10 @@ class Alquiler extends Model {
     return ['date_delivery', 'return_date']
   }
 
- /* static get dateFormat (){
+  static get dateFormat (){
     return 'YYYY-MM-DD'
   }
-*/
+
 }
 
 module.exports = Alquiler
