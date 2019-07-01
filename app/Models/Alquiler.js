@@ -7,6 +7,15 @@ class Alquiler extends Model {
   static get table (){
     return 'alquileres'
   }
+
+  static get dates () {
+    return ['date_delivery', 'return_date']
+  }
+
+ /* static get dateFormat (){
+    return 'YYYY-MM-DD'
+  }
+*/
 }
 
 module.exports = Alquiler

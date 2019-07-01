@@ -1,0 +1,47 @@
+@layout('layouts.main')
+
+@section('style-extras')
+  {{style('alquileres')}}
+@endsection
+
+@section('title')
+  Alquileres
+@endsection
+
+@section('content')
+  <h1 class="mt-3">Todos los Alquileres</h1>
+  <div class="table-resposive mt-4 text-center" id="all_alquilere">
+
+    <table class="table table-borderless table-hover">
+        <caption class="text-white">Lista de Alquilres</caption>
+        <thead class="thead-light">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Fecha de Entrega</th>
+            <th scope="col">Fecha de Devolucion</th>
+            <th scope="col">Valor del Alquiler</th>
+            <th scope="col">Options</th>
+          </tr>
+        </thead>
+        <tbody>
+          @each(alq in alquileres)
+            <tr>
+            <th class="table-light" scope="row">{{ alq.id }}</th>
+            <td class="table-light">{{ alq.date_delivery }}</td>
+            <td class="table-light">{{ alq.return_date }}</td>
+            <td class="table-light">{{ alq.value }}</td>
+            <td class="table-light">
+                <button class="btn btn-primary mr-2 mt-2 mb-2 ml-2"><a href="" style="text-decoration: none">Actualizar</a></button>
+                <button class="btn btn-warning mr-2 mt-2 mb-2 ml-2"><a href="" style="text-decoration: none">[L]Borrar</a></button>
+                <button class="btn btn-danger mr-2 mt-2 mb-2 ml-2"><a href="" style="text-decoration: none">[S]Borrar</a></button>
+            </td>
+            </tr>
+          @else
+            <h2 class="text-white">No hay Alquileres</h2>
+          @endeach
+        </tbody>
+      </table>
+
+  </div>
+
+@endsection

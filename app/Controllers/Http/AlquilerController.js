@@ -25,6 +25,14 @@ class AlquilerController {
 
   }
 
+  async all ({view}){
+
+    const alquileres = await Alquiler.all()
+    //console.log(alquileres.toJSON())
+    console.log(alquileres.toJSON())
+    return view.render('alquileres.all' , {alquileres : alquileres.toJSON() })
+  }
+
   /**
    * Render a form to be used for creating a new alquiler.
    * GET alquilers/create

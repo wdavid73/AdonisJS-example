@@ -20,11 +20,21 @@ Route.on('/').render('index')
 Route.on('/contact').render('contact').as('contact')
 
 /* ### Alquileres ### */
+//Routing Usando Route.group
+Route.group(() => {
+    Route.get('/', 'AlquilerController.index').as('home.alquileres')
+    Route.get('form' , 'AlquilerController.create')
+    Route.post('registro' , 'AlquilerController.store')
+    Route.get('all' , 'AlquilerController.all')
+}).prefix('alquileres')
 
 
-Route.get('/alquileres' , 'AlquilerController.index').as('home.alquileres')
-Route.get('/alquileres/form' , 'AlquilerController.create')
-Route.post('/alquileres/registro' , 'AlquilerController.store')
 
-//Route.on('/alquileres/form').render('alquileres.form').as('registro_alquileres')
-Route.on('/alquileres/all').render('alquileres.all').as('all_alquileres')
+
+
+
+//Routing Basico
+//Route.get('/alquileres' , 'AlquilerController.index').as('home.alquileres')
+//Route.get('/alquileres/form' , 'AlquilerController.create')
+//Route.post('/alquileres/registro' , 'AlquilerController.store')
+//Route.get('/alquileres/all' , 'AlquilerController.all')
