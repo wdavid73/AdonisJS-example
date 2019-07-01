@@ -1,6 +1,6 @@
-# Adonis fullstack application
+# Adonis Back-End application
 
-This is the fullstack boilerplate for AdonisJs, it comes pre-configured with.
+This is the Back-End boilerplate for AdonisJs, it comes pre-configured with.
 
 1. Bodyparser
 2. Session
