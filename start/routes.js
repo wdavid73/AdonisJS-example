@@ -49,7 +49,12 @@ Route.group( () =>{
     //Actualizar
     Route.get('edit/:id' , 'ClienteController.edit')
     Route.put('update/:id' , 'ClienteController.update')
-
+    //Borrado Logico
+    Route.get('delete/:id' , 'ClienteController.view_delete_l')
+    Route.put('del/:id' , 'ClienteController.delete_log')
+    //Borrado Permanente
+    Route.get('destroy/:id' , 'ClienteController.view_destroy')
+    Route.get('des/:id' , 'ClienteController.destroy')
 }).prefix('clientes')
 
 

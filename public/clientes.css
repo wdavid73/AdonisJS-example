@@ -13,11 +13,14 @@ html, body {
    
 }
 
-h1{
+h1 , h2{
     color : white;
+    text-align: center;
+    font-family: Lobster;
 }
 
 .form-clientes{
     width: 50%;
     margin: 0 auto;
+    margin-top: 3%;
 }

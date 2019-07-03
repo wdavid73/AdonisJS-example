@@ -5,14 +5,23 @@
 @endsection
 
 @section('title')
-  Registro de Alquiler
+  Alquiler - Actualizar
 @endsection
 
 @section('content')
   
   <div class="form-alquiler">
     <div class="card text-white bg-dark">
-      <h2 class="card-header">Actualizacion de Alquileres</h5>
+        <div class="row">
+            <div class="col-2">
+                <a href="/alquileres/all" class="card-title btn btn-link mt-2" style="text-decoration: none">
+                  <img src="http://www.sabservicios.com.mx/bolsadetrabajo/public/sab/img/volver-2.png" alt="" width="40" height="40">
+                </a>
+            </div>
+            <div class="col-8">
+                <h2 class="card-title mt-3">Actualizar Alquiler</h2>
+            </div>
+          </div>
       <div class="card-body">
 
       <form action="{{ ' /alquileres/update/'+alquileres_id.id+'?_method=PUT' }}" method="POST">

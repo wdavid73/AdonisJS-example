@@ -1,38 +1,41 @@
 @layout('layouts.main')
 
 @section('style-extras')
-  {{style('alquileres')}}
+  {{style('clientes')}}
 @endsection
 
 @section('title')
-  Alquiler - Delete
+  Cliente - Destroy
 @endsection
 
 @section('content')
   
-  <div class="form-alquiler">
+  <div class="form-clientes mt-5">
     <div class="card text-white bg-dark">
         <div class="row">
             <div class="col-2">
-                <a href="/alquileres/all" class="card-title btn btn-link mt-2" style="text-decoration: none">
+                <a href="/clientes/all" class="card-title btn btn-link mt-2" style="text-decoration: none">
                   <img src="http://www.sabservicios.com.mx/bolsadetrabajo/public/sab/img/volver-2.png" alt="" width="40" height="40">
                 </a>
             </div>
             <div class="col-8">
-                <h2 class="card-title mt-3">Borrado Logico</h2>
+                <h2 class="card-title mt-3">Borrado Permanente</h2>
             </div>
           </div>
       <div class="card-body">
 
-      <form action="{{ ' /alquileres/del/'+alquileres_id.id+'?_method=PUT' }}" method="POST">
+      <form action="{{ ' /alquileres/des/'+cliente.id+'?_method=DELETE' }}" method="POST">
             {{ csrfField() }}
             <div class="form-group">
-            <h2>Esta Seguro que desea borrar este Alquiler #{{alquileres_id.id}}</h2>
+            <h2>Esta Seguro que desea borrar este Cliente #{{cliente.id}}</h2>
                 <span>
                     <h4>Informacion:</h4>
-                    Fecha de Entrega : {{alquileres_id.date_delivery}} <br>
-                    Fecha de Devolucion : {{alquileres_id.return_date}} <br>
-                    Valor del Alquiler : {{alquileres_id.value}} <br>    
+                    <p>
+                        Nombres : {{cliente.names}} <br>
+                        Apellidos : {{cliente.lastnames}} <br>
+                        Telefono : {{cliente.cellphone}} <br>
+                        E-mail : {{cliente.address}} <br>
+                    </p>   
                 </span>
 
                 <input type="submit" class="btn btn-danger btn-block mt-3" value="SI">
@@ -42,6 +45,4 @@
       </div>
     </div>
   </div>
-
-  
 @endsection

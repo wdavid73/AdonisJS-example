@@ -111,6 +111,19 @@ class ClienteController {
     return response.redirect('/clientes/all')
   }
 
+  async view_delete_l ({params , view }) {
+    const clientes_id = await Cliente.find(params.id)
+    return view.render('clientes.delete' , {clientes_id})
+  }
+
+  async delete_log ({params , request , response }){
+
+    const cliente = await Cliente.find(params.id)
+    cliente.state = 0
+    await cliente.save()
+    return response.redirect('/clientes/all')
+  }
+
   /**
    * Delete a cliente with id.
    * DELETE clientes/:id
@@ -119,7 +132,15 @@ class ClienteController {
    * @param {Request} ctx.request
    * @param {Response} ctx.response
    */
+  async view_destroy ({params , view}){
+    const cliente = await Cliente.find(params.id)
+    return view.render('clientes.destroy' , {cliente})
+  }
+
   async destroy ({ params, request, response }) {
+    const cliente = await Cliente.find(params.id)
+    await cliente.delete()
+    return response.redirect('/clientes/all')
   }
 }
 
