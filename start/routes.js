@@ -55,9 +55,11 @@ Route.group( () =>{
     //Borrado Permanente
     Route.get('destroy/:id' , 'ClienteController.view_destroy')
     Route.get('des/:id' , 'ClienteController.destroy')
+    //Buscar un Cliente
+    Route.get('buscar' , 'ClienteController.view_find')
+    Route.post('buscado' , 'ClienteController.find')
+    
 }).prefix('clientes')
-
-
 //Routing Basico
 //Route.get('/alquileres' , 'AlquilerController.index').as('home.alquileres')
 //Route.get('/alquileres/form' , 'AlquilerController.create')

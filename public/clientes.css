@@ -24,3 +24,15 @@ h1 , h2{
     margin: 0 auto;
     margin-top: 3%;
 }
+.form-find{
+    width: 35%;
+    margin: 0 auto;
+    margin-top: 3%; 
+}
+
+.info{
+    width: 38%;
+    margin : 0 auto;
+    font-size: 25px;
+    font-family: Roboto
+}

@@ -1,0 +1,58 @@
+@layout('layouts.main')
+
+@section('title')
+  Clientes - Buscar
+@endsection
+
+@section('style-extras')
+  {{style('clientes')}}
+@endsection
+
+@section('content')
+<div class="form-find">
+  <div class="card text-white bg-dark mt-5">
+    <div class="card-title">
+      <div class="row">
+        <div class="col-2">
+          <a href="/clientes" class="card-title btn btn-link mt-2" style="text-decoration: none">
+            <img src="http://www.sabservicios.com.mx/bolsadetrabajo/public/sab/img/volver-2.png" alt="" width="40" height="40">
+          </a>
+        </div>
+        <div class="col-8">
+          <h2 class="card-title mt-3">Buscar Cliente</h2>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      
+      <div class="form-group">
+        <form action="/clientes/buscado" method="POST">
+          {{ csrfField() }}
+        <input type="number" class="form-control" placeholder="Ingrese el Numero de Telefono" name ="cellphone" value = "{{data.cellphone}}" required >
+          <input type="submit" class="btn btn-info btn-block mt-2" value="Search">
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="info">
+
+  @if(data == '')
+    <h2 class="text-white">
+      Porfavor ingresa un numero de telefono para buscar un cliente
+    </h2>  
+  @else
+    <div class="card mt-5">
+      <div class="card-header">Informacion del Cliente</div>
+        <div class="card-body">
+          <p class="card-text">
+              Nombres : {{data.names}} <br>
+              Apellidos : {{data.lastnames}} <br>  
+              Telefono : {{data.cellphone}} <br>
+              E-Mail : {{data.address}} <br>
+          </p>
+      </div>
+    </div>
+  @endif
+</div>
+@endsection

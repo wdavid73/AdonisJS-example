@@ -43,6 +43,29 @@ class ClienteController {
     return view.render('clientes.all' , { clientes : clientes.toJSON() })
   }
 
+  async view_find({view}){
+    return view.render('clientes.find')
+  }
+
+  async find({params, request, response, view}){
+    const clientes_all = await Cliente.all()
+    const cliente = clientes_all.toJSON()
+    const data = ''
+
+      console.log('------------------')
+
+    for(var field in cliente){
+      const cellphone = cliente[field].cellphone
+      const my_cell = request.input('cellphone')
+      if (my_cell == cellphone){
+        const data =  cliente[field] 
+        console.log(data) 
+        return view.render('clientes.find' , {data})
+      }
+    }    
+    return view.render('clientes.find' , {data})
+  }
+
   /**
    * Create/save a new cliente.
    * POST clientes
