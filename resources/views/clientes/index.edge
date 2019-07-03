@@ -1,7 +1,7 @@
 @layout('layouts.main')
 
 @section('style-extras')
-    {{style('clientes')}}  
+    {{style('index')}}  
 @endsection
 
 @section('title')
@@ -12,16 +12,16 @@
     <div class="container text-center mt-5">
         <h1>Clientes</h1>
 
-        <div class="link cliente-link">
-            <ul class="nav nav-fill justify-content-center">
+        <div class="links cliente-link">
+            <ul class="nav nav-fill justify-content-center mt-6">
                 <li class="nav-item">
-                    <a href="">Registrar Cliente</a>
+                    <span style="color : white">IMG</span><br><a href="/clientes/form">Registrar Cliente</a>
                 </li>
                 <li class="nav-item">
-                    <a href="">Ver todos los Clientes</a>
+                    <span style="color : white">IMG</span><br><a href="/clientes/all">Ver todos los Clientes</a>
                 </li>
                 <li class="nav-item">
-                    <a href="">Buscar un Cliente</a>
+                    <span style="color : white">IMG</span><br><a href="">Buscar un Cliente</a>
                 </li>
             </ul>
         </div>

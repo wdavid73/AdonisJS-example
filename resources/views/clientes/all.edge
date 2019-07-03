@@ -1,0 +1,52 @@
+@layout('layouts.main')
+
+@section('style-extras')
+  {{style('clientes')}}
+@endsection
+
+@section('title')
+  Clientes
+@endsection
+
+@section('content')
+  <h1 class="mt-3">Todos los Clientes</h1>
+  <div class="table-resposive mt-4 text-center" id="all_alquilere">
+
+    <table class="table table-borderless table-hover">
+        <caption class="text-white">Lista de Clientes <br> 
+          <a href="/clientes" class="btn btn-link" style="text-decoration: none">Volver</a> 
+        </caption>
+        <thead class="thead-light">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombres</th>
+            <th scope="col">Apellidos</th>
+            <th scope="col">Telefono</th>
+            <th scope="col">E-mail</th>
+            <th scope="col">Options</th>
+          </tr>
+        </thead>
+        <tbody>
+          @each(cli in clientes)
+                <tr>
+                  <th class="table-light" scope="row">{{ cli.id }}</th>
+                  <td class="table-light">{{ cli.names }}</td>
+                  <td class="table-light">{{ cli.lastnames }}</td>
+                  <td class="table-light">{{ cli.cellphone }}</td>
+                  <td class="table-light">{{ cli.address }}</td>
+                  <td class="table-light">
+                      <a href="/clientes/edit/{{cli.id}}" class="btn btn-primary mr-2 mt-2 mb-2 ml-2" style="text-decoration: none">Actualizar</a>
+                      <a href="/clientes/delete/{{cli.id}}" class="btn btn-warning mr-2 mt-2 mb-2 ml-2" style="text-decoration: none">[L]Borrar</a>
+                      <a href="/clientes/destroy/{{cli.id}}" class="btn btn-danger mr-2 mt-2 mb-2 ml-2" style="text-decoration: none">[S]Borrar</a>
+                  </td>
+                </tr>                
+          @else
+            <h2 class="text-white">No hay Clientes Registrados</h2>
+          @endeach
+          
+        </tbody>
+      </table>
+
+  </div>
+
+@endsection

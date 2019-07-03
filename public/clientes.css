@@ -17,7 +17,7 @@ h1{
     color : white;
 }
 
-.cliente-link ul>li>a{
-    color:white;
-    text-decoration: none;
+.form-clientes{
+    width: 50%;
+    margin: 0 auto;
 }

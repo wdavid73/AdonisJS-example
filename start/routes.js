@@ -38,13 +38,16 @@ Route.group(() => {
     Route.delete('des/:id' , 'AlquilerController.destroy')
 }).prefix('alquileres')
 
-/* $$$ Registro de Clientes $$$ */
+/* $$$ Clientes $$$ */
 
-Route.on('/clientes').render('clientes.index')
+Route.group( () =>{
+    Route.get('/' , 'ClienteController.index')
+    Route.get('all' , 'ClienteController.all')
+    //Registro
+    Route.get('form' , 'ClienteController.create')
+    Route.post('registro' , 'ClienteController.store')
 
-
-
-
+}).prefix('clientes')
 
 
 //Routing Basico

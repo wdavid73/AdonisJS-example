@@ -1,0 +1,34 @@
+@layout('layouts.main')
+
+@section('style-extras')
+  {{style('clientes')}}
+@endsection
+
+@section('title')
+  Clientes - Registro
+@endsection
+
+@section('content')
+    
+    <div class="form-clientes">
+        <div class="card text-white bg-dark mt-5">
+            <h2 class="card-header">Registro de Clientes</h2>
+            <div class="card-body">
+                <form action="/clientes/registro" method="POST">
+                    {{ csrfField() }}
+                    <div class="form-group">
+                        <input type="text" class="form-control mt-2" name="names" placeholder="Nombres">
+                        <input type="text" class="form-control mt-2" name="lastnames" placeholder="Apellidos">
+                        <input type="number" class="form-control mt-2" name="cellphone" placeholder="Telefono">
+                        <input type="email" class="form-control mt-2" name="address" placeholder="Correo Electronico">
+                        <input type="submit" class="form-control mt-2 btn btn-success btn-block" value="Submit">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <caption>
+            <a href="/clientes" class="btn btn-link" style="text-decoration: none">Volver</a> 
+        </caption>
+    </div>
+
+@endsection

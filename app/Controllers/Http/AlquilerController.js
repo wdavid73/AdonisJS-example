@@ -117,7 +117,6 @@ class AlquilerController {
 
     const alquileres = await Alquiler.all()
     //console.log(alquileres.toJSON())
-    console.log(alquileres.toJSON())
     return view.render('alquileres.all' , {alquileres : alquileres.toJSON() })
   }
 
