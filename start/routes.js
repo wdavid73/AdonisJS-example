@@ -46,6 +46,9 @@ Route.group( () =>{
     //Registro
     Route.get('form' , 'ClienteController.create')
     Route.post('registro' , 'ClienteController.store')
+    //Actualizar
+    Route.get('edit/:id' , 'ClienteController.edit')
+    Route.put('update/:id' , 'ClienteController.update')
 
 }).prefix('clientes')
 

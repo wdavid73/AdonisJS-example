@@ -86,6 +86,9 @@ class ClienteController {
    * @param {View} ctx.view
    */
   async edit ({ params, request, response, view }) {
+
+    const clientes_id = await Cliente.find(params.id)
+    return view.render('clientes.edit' , {clientes_id})
   }
 
   /**
@@ -97,6 +100,15 @@ class ClienteController {
    * @param {Response} ctx.response
    */
   async update ({ params, request, response }) {
+    const clientes = await Cliente.find(params.id)
+    clientes.names = request.input('names')
+    clientes.lastnames = request.input('lastnames')
+    clientes.cellphone = request.input('cellphone')
+    clientes.address = request.input('address')
+
+    await clientes.save()
+
+    return response.redirect('/clientes/all')
   }
 
   /**

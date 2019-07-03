@@ -1,0 +1,36 @@
+@layout('layouts.main')
+
+@section('style-extras')
+  {{style('clientes')}}
+@endsection
+
+@section('title')
+  Clientes - Actualizacion
+@endsection
+
+@section('content')
+  
+  <div class="form-alquiler">
+    <div class="card text-white bg-dark">
+      <h2 class="card-header">Actualizacion de Clientes</h5>
+      <div class="card-body">
+
+      <form action="{{ ' /clientes/update/'+clientes_id.id+'?_method=PUT' }}" method="POST">
+            {{ csrfField() }}
+            <div class="form-group">
+                <input type="text" class="form-control mt-3" placeholder="Nombres" name="names" value="{{clientes_id.names}}" required>
+                <input type="text" class="form-control mt-3" placeholder="Apellidos" name="lastnames" value="{{clientes_id.lastnames}}" required>
+                <input type="number" class="form-control mt-3" placeholder="Telefono" name="cellphone" value="{{clientes_id.cellphone}}" required>
+                <input type="email" class="form-control mt-3" placeholder="Correo Electronico" name="address" value="{{clientes_id.address}}" required>
+                <input type="submit"  class="btn btn-primary btn-block mt-3" value="Update">
+            </div>
+        </form>
+      </div>
+    </div>
+    <caption>
+        <a href="/clientes" class="btn btn-link" style="text-decoration: none">Volver</a> 
+    </caption>
+  </div>
+
+
+@endsection
