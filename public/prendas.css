@@ -8,5 +8,18 @@ html, body {
     width: 100%;
 }
 .form-prenda{
-    width: 45%
+    width: 45%;
+    margin: 0 auto;
+}
+
+
+
+.titulo-card{
+    text-align: center;
+    font-family: Lobster;
+}
+
+.cuerpo-card{
+    font-family: Lobster;
+    font-size: 30px
 }

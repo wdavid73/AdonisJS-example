@@ -10,7 +10,7 @@
 
 @section('content')
   
-  <div class="form-clientes mt-5">
+  <div class="form-prenda mt-5">
     <div class="card text-white bg-dark">
         <div class="row">
             <div class="col-2">
@@ -19,7 +19,7 @@
                 </a>
             </div>
             <div class="col-8">
-                <h2 class="card-title mt-3">Borrado Permanente</h2>
+                <h2 class="card-title mt-3" style="font-family: Lobster; text-align:center">Borrado Permanente</h2>
             </div>
           </div>
       <div class="card-body">
@@ -27,16 +27,18 @@
       <form action="{{ ' /prendas/des/'+prenda.id+'?_method=DELETE' }}" method="POST">
             {{ csrfField() }}
             <div class="form-group">
-            <h2>Esta Seguro que desea borrar esta Prenda #{{prenda.id}}</h2>
-                <span>
-                    <h4>Informacion:</h4>
+              <div class="card bg-dark">
+                <div class="titulo-card card-header">
+                    <h2>Esta Seguro que desea borrar esta Prenda #{{prenda.id}}?</h2>
+                </div>
+                <div class="cuerpo-card card-body">
                     <p>
                         Prenda : {{prenda.name}} <br>
                         Color : {{prenda.color}} <br>
-                        Size : {{prenda.size}} <br>
+                        Talla : {{prenda.size}} <br>
                     </p>   
-                </span>
-
+                </div>
+              </div>
                 <input type="submit" class="btn btn-danger btn-block mt-3" value="SI">
                 <a class="btn btn-success btn-block" href="/prendas/all" style="text-decoration: none">No</a>
             </div>

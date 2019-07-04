@@ -103,13 +103,16 @@ class PrendaController {
    * @param {Request} ctx.request
    * @param {Response} ctx.response
    */
-  
+
   async destroy_view ({params , view}){
-    const prenda = Prenda.find(params.id)
+    const prenda = await Prenda.find(params.id)
     return view.render('prendas.destroy' , {prenda})
   }
 
   async destroy ({ params, request, response }) {
+    const prenda = await Prenda.find(params.id)
+    await prenda.delete()
+    return response.redirect('/prendas/all')
   }
 
   async all ({view}){
