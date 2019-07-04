@@ -1,0 +1,59 @@
+@layout('layouts.main')
+
+@section('style-extras')
+  {{style('prendas')}}
+@endsection
+
+@section('title')
+  Prendas - Todos
+@endsection
+
+@section('content')
+    <div class="table-prenda">
+        <div class="table-responsive text-center">
+            <table class="table table-borderless table-hover">
+                <thead class="thead-light">
+                    <tr>
+                        <th colspan="6" class="bg-info">
+                            <div class="row">
+                                <div class="col-2">
+                                    <a href="/prendas">
+                                        <img src="http://www.sabservicios.com.mx/bolsadetrabajo/public/sab/img/volver-2.png" alt="" width="40" height="40">
+                                    </a>
+                                </div>
+                                <div class="col-8">
+                                    <h2 class="card-title">Todas las Prendas</h2>
+                                </div>
+                            </div>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Prenda</th>
+                        <th scope="col">Color</th>
+                        <th scope="col">Talla</th>
+                        <th scope="col">Opciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @each(pre in prenda)
+                    @if(pre.state == 1)
+                        <tr>
+                            <th class="table-light" scopte="row">{{pre.id}}</th>
+                            <td class="table-light">{{pre.name}}</td>
+                            <td class="table-light">{{pre.color}}</td>
+                            <td class="table-light">{{pre.size}}</td>
+                            <td class="table-light">
+                                <a href="/prendas/delete/{{pre.id}}" class="btn btn-warning text-decoration-none">[L]Borrado</a>
+                                <a href="/prendas/destroy/{{pre.id}}" class="btn btn-danger text-decoration-none">[S]Borrado</a>
+                                <a href="" class="btn btn-success text-decoration-none">Ver</a>
+                            </td>
+                        </tr>
+                    @endif
+                    @else
+                    @endeach
+                </tbody>
+            </table>
+        </div>
+    </div>
+@endsection

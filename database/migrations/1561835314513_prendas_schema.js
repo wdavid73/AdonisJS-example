@@ -8,7 +8,7 @@ class PrendasSchema extends Schema {
     this.create('prendas', (table) => {
       table.increments()
       table.string('name' , 100).notNullable()
-      table.string('size' , 5).notNullable()
+      table.string('size' , 10).notNullable()
       table.string('color' , 50).notNullable()
       table.timestamps()
     })

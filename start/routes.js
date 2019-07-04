@@ -54,7 +54,7 @@ Route.group( () =>{
     Route.put('del/:id' , 'ClienteController.delete_log')
     //Borrado Permanente
     Route.get('destroy/:id' , 'ClienteController.view_destroy')
-    Route.get('des/:id' , 'ClienteController.destroy')
+    Route.delete('des/:id' , 'ClienteController.destroy')
     //Buscar un Cliente
     Route.get('buscar' , 'ClienteController.view_find')
     Route.post('buscado' , 'ClienteController.find')
@@ -63,10 +63,20 @@ Route.group( () =>{
 
 /* %% Prendas %% */
 
-Route.on('/prendas').render('prendas.index')
-Route.on('/prendas/all').render('prendas.all')
-Route.on('/prendas/form').render('prendas.form')
-Route.on('/prendas/find').render('prendas.find')
+Route.group( ()=>{
+    Route.get('/' , 'PrendaController.index')
+    Route.get('all' , 'PrendaController.all')
+    //Registro
+    Route.get('form' , 'PrendaController.create')
+    Route.post('registro' , 'PrendaController.store')
+    //Borrando Logico
+    Route.get('delete/:id' , 'PrendaController.delete_log')
+    //Borrando Permanente
+    Route.get('destroy/:id' , 'PrendaController.destroy_view')
+    Route.delete('des/:id' , 'PrendaController.destroy')
+    //Buscar
+    Route.get('buscar' , 'PrendaController.view_find')
+}).prefix('prendas')
 
 //Routing Basico
 //Route.get('/alquileres' , 'AlquilerController.index').as('home.alquileres')
