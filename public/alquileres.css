@@ -45,3 +45,13 @@ p{
     font-size: 30px;
     text-decoration: none;
 }
+
+#index-alquileres ul>li>a>p{
+    width: 87%;
+    color:white;
+    font-family: Lobster;
+    font-size: 30px;
+    text-decoration: none;
+    margin : 0 auto;
+    margin-top : 10px;
+}
