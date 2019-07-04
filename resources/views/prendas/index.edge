@@ -1,0 +1,40 @@
+@layout('layouts.main')
+
+@section('style-extras')
+  {{style('prendas')}}
+@endsection
+
+@section('title')
+  Prendas
+@endsection
+
+@section('content')
+  <div class="text-white">
+      <h2 style="text-align: center" class="mt-5">Prendas</h2>
+      <p style="text-align: center" class="mt-2">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Officiis, ipsam omnis? Optio illum eius architecto voluptatum 
+        modi fuga ab asperiores, quas nemo tempora, recusandae nihil 
+        saepe amet harum, numquam sapiente.
+      </p>
+      <div class="links prenda-link mt-4">
+          <ul class="nav nav-fill justify-content-center">
+            <li class="nav-item">
+                <a href="/prendas/form" class="text-decoration-none btn btn-primary">
+                     Registrar Prenda
+                </a> 
+            </li>
+            <li class="nav-item">
+                <a href="/prendas/all" class="text-decoration-none btn btn-success">  
+                      Ver Prendas Hechas
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/prendas/find" class="text-decoration-none btn btn-info">
+                    Buscar Prenda
+                </a>
+            </li>
+          </ul>
+      </div>
+  </div>
+@endsection

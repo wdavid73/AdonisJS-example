@@ -1,0 +1,46 @@
+@layout('layouts.main')
+
+@section('style-extras')
+  {{style('prendas')}}
+@endsection
+
+@section('title')
+  Prendas - Registro
+@endsection
+
+@section('content')
+<div class="container form-prenda">
+    <div class="card text-white bg-dark mt-5">
+        <div class="card-header">
+            <div class="row">
+                <div class="col-2">
+                    <a href="/prendas" class="card-title btn btn-link mt-2" style="text-decoration: none">
+                        <img src="http://www.sabservicios.com.mx/bolsadetrabajo/public/sab/img/volver-2.png" alt="" width="40" height="40">
+                    </a>
+                </div>
+                <div class="col-8">
+                    <h2 class="card-title mt-3">Registrar Prendas</h2>
+                </div>
+            </div>
+        </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <form action="" method="">
+                        <input type="text" class="form-control" name="name" placeholder="Nombre de la Prenda" required>
+                        <input type="text" class="form-control mt-3" name="color" placeholder="Color de la Prenda" required>
+                        <label for="" class=" mt-3">Talla</label>
+                        <select name="" id="" class="form-control">
+                            <option value="">XS</option>
+                            <option value="">S</option>
+                            <option value="">M</option>
+                            <option value="">L</option>
+                            <option value="">XL</option>
+                            <option value="">2XL</option>
+                        </select>
+                    <input type="submit" class="btn btn-success btn-block mt-3" value="submit">
+                </form>
+            </div>
+            </div>
+    </div>
+</div>
+@endsection

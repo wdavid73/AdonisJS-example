@@ -58,8 +58,16 @@ Route.group( () =>{
     //Buscar un Cliente
     Route.get('buscar' , 'ClienteController.view_find')
     Route.post('buscado' , 'ClienteController.find')
-    
 }).prefix('clientes')
+
+
+/* %% Prendas %% */
+
+Route.on('/prendas').render('prendas.index')
+Route.on('/prendas/all').render('prendas.all')
+Route.on('/prendas/form').render('prendas.form')
+Route.on('/prendas/find').render('prendas.find')
+
 //Routing Basico
 //Route.get('/alquileres' , 'AlquilerController.index').as('home.alquileres')
 //Route.get('/alquileres/form' , 'AlquilerController.create')
