@@ -76,6 +76,7 @@ Route.group( ()=>{
     Route.delete('des/:id' , 'PrendaController.destroy')
     //Buscar
     Route.get('buscar' , 'PrendaController.view_find')
+    Route.post('buscado' , 'PrendaController.find')
 }).prefix('prendas')
 
 //Routing Basico

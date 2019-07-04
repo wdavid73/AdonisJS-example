@@ -10,7 +10,7 @@ html, body {
 
 .contenido{
     margin: 0 auto;
-   
+       
 }
 
 label{
@@ -38,12 +38,16 @@ p{
     margin: 30px auto auto;
     
 }
+.form-alquiler{
+    animation: slideUp 1s cubic-bezier(0.19, 1, 0.30, 1) 1.3s forwards;
+}
 
 #index-alquileres ul>li>a{
     color:white;
     font-family: Lobster;
     font-size: 30px;
     text-decoration: none;
+    
 }
 
 #index-alquileres ul>li>a>p{

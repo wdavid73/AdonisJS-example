@@ -28,17 +28,24 @@
                     <form action="/prendas/registro" method="POST">
                         {{ csrfField() }}
                         <input type="text" class="form-control" name="name" placeholder="Nombre de la Prenda" required>
-                        <input type="color" class="form-control mt-3" name="color" placeholder="Color de la Prenda" required>
-                        <label for="" class=" mt-3">Talla</label>
-                        <select name="size" id="" class="form-control">
-                            <option value="1">XS</option>
-                            <option value="2">S</option>
-                            <option value="3">M</option>
-                            <option value="4">L</option>
-                            <option value="5">XL</option>
-                            <option value="6">2XL</option>
-                        </select>
-                    <input type="submit" class="btn btn-success btn-block mt-3" value="submit">
+                            <div class="form-row">
+                                <div class="col">
+                                    <label for="" class="mt-3">Color:</label>
+                                    <input type="color" class="form-control" name="color" placeholder="Color de la Prenda" required>
+                                </div>
+                                <div class="col">
+                                    <label for="" class="mt-3">Talla:</label>
+                                    <select name="size" id="" class="form-control">
+                                        <option value="1">XS</option>
+                                        <option value="2">S</option>
+                                        <option value="3">M</option>
+                                        <option value="4">L</option>
+                                        <option value="5">XL</option>
+                                        <option value="6">2XL</option>
+                                    </select>
+                                </div>
+                            </div>
+                    <input type="submit" class="btn btn-success btn-block mt-3" value="Submit" id="submit">
                 </form>
             </div>
             </div>

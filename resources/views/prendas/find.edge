@@ -25,16 +25,16 @@
         </div>
             <div class="card-body">
                 <div class="form-group">
-                    <form action="" method="">
-
+                    <form action="/prendas/buscado" method="POST">
+                        {{ csrfField() }}
                         <label for="" class=" mt-3">Seleccione una talla por la cual buscar una prenda: </label>
-                        <select name="" id="" class="form-control">
-                            <option value="">XS</option>
-                            <option value="">S</option>
-                            <option value="">M</option>
-                            <option value="">L</option>
-                            <option value="">XL</option>
-                            <option value="">2XL</option>
+                        <select name="size" id="" class="form-control">
+                            <option value="1">XS</option>
+                            <option value="2">S</option>
+                            <option value="3">M</option>
+                            <option value="4">L</option>
+                            <option value="5">XL</option>
+                            <option value="6">2XL</option>
                         </select>
                     <input type="submit" class="btn btn-success btn-block mt-3" value="Search">
                 </form>
@@ -42,4 +42,46 @@
             </div>
     </div>
 </div>
+
+@if(data == [])
+    <h2 class="text-white mt-5" id="sinbusqueda">Porfavor Presione el Boton de buscar</h2>
+@else
+    <div class="table-buscar-prenda mt-5">
+        <div class="table-resposive text-center">
+            <table class="table table-borderless table-hover">
+                <thead class="thead-light">
+                    <tr>
+                        <th colspan="6" class="bg-info">
+                            <div class="row">
+                                <div class="col-2">
+                                    <a href="/prendas">
+                                        <img src="http://www.sabservicios.com.mx/bolsadetrabajo/public/sab/img/volver-2.png" alt="" width="40" height="40">
+                                    </a>
+                                </div>
+                                <div class="col-8">
+                                    <h2 class="card-title">Prenda/s encontrada/s</h2>
+                                </div>
+                            </div>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th scope="col">Prenda</th>
+                        <th scope="col">Color</th>
+                        <th scope="col">Talla</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @each(dat in data)
+                      <tr>
+                        <td class="table-light">{{dat.name}}</td>
+                        <td class="table-light">{{dat.color}}</td>
+                        <td class="table-light">{{dat.size}}</td>
+                      </tr>
+                    @endeach
+                </tbody>
+            </table>
+        </div>
+    </div>
+@endif
+
 @endsection

@@ -27,7 +27,7 @@
       <form action="{{ ' /clientes/del/'+clientes_id.id+'?_method=PUT' }}" method="POST">
             {{ csrfField() }}
             <div class="form-group">
-            <h2>Esta Seguro que desea borrar este Cliente #{{clientes_id.id}}</h2>
+            <h2>Esta Seguro que desea borrar el cliente : {{clientes_id.names}} ?</h2>
                 <span>
                     <h5>Informacion</h5>
                     <p>

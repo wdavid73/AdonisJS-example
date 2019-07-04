@@ -27,7 +27,7 @@
       <form action="{{ ' /alquileres/des/'+cliente.id+'?_method=DELETE' }}" method="POST">
             {{ csrfField() }}
             <div class="form-group">
-            <h2>Esta Seguro que desea borrar este Cliente #{{cliente.id}}</h2>
+            <h2>Esta Seguro que desea borrar el cliente : {{cliente.names}} {{cliente.lastnames}} ?</h2>
                 <span>
                     <h4>Informacion:</h4>
                     <p>

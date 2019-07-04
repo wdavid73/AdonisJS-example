@@ -122,6 +122,30 @@ class PrendaController {
   async view_find ({view}){
     return view.render('prendas.find')
   }
+  async find({params , request , response , view}){
+    const size_front = request.input('size')
+    var s
+    var data = new Array()
+    
+    if(size_front == 1){s = 'XS'}
+    if(size_front == 2){s = 'S'}
+    if(size_front == 3){s = 'M'}
+    if(size_front == 4){s = 'L'}
+    if(size_front == 5){s = 'XL'}
+    if(size_front == 6){s = '2XL'}
+
+    const size_all = await Prenda.all()
+    const size_js = size_all.toJSON()
+    for(var field in size_js){
+      if(size_js[field].state === 1){
+        const size = size_js[field].size
+        if(size == s){
+          data.push(size_js[field])
+        }
+      }
+    }
+    return view.render('prendas.find' , {data})
+  }
 
   async delete_log({params , request , response}){
     const prenda = await Prenda.find(params.id)
