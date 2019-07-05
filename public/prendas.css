@@ -11,7 +11,7 @@ html, body {
 .form-prenda{
     width: 45%;
     margin: 0 auto;
-    animation: slideUp 1s cubic-bezier(0.19, 1, 0.30, 1) 1.3s forwards;
+    
 }
 
 
@@ -46,7 +46,7 @@ h2{
     text-align: center;
     font-family: Lobster;
     font-size: 30px;
-    animation: slideUp 1s cubic-bezier(0.19, 1, 0.30, 1) 1.3s forwards;
+    
 }
 #submit{
     font-size: 30px;

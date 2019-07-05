@@ -45,10 +45,10 @@ Route.group( () =>{
     Route.get('all' , 'ClienteController.all')
     //Registro
     Route.get('form' , 'ClienteController.create')
-    Route.post('registro' , 'ClienteController.store')
+    Route.post('registro' , 'ClienteController.store').validator('ValidatorClient')
     //Actualizar
     Route.get('edit/:id' , 'ClienteController.edit')
-    Route.put('update/:id' , 'ClienteController.update')
+    Route.put('update/:id' , 'ClienteController.update').validator('ValidatorClient')
     //Borrado Logico
     Route.get('delete/:id' , 'ClienteController.view_delete_l')
     Route.put('del/:id' , 'ClienteController.delete_log')
@@ -57,7 +57,7 @@ Route.group( () =>{
     Route.delete('des/:id' , 'ClienteController.destroy')
     //Buscar un Cliente
     Route.get('buscar' , 'ClienteController.view_find')
-    Route.post('buscado' , 'ClienteController.find')
+    Route.post('buscado' , 'ClienteController.find').validator('ValidatorClient')
 }).prefix('clientes')
 
 

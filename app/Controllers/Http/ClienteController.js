@@ -51,15 +51,11 @@ class ClienteController {
     const clientes_all = await Cliente.all()
     const cliente = clientes_all.toJSON()
     const data = ''
-
-      console.log('------------------')
-
     for(var field in cliente){
       const cellphone = cliente[field].cellphone
       const my_cell = request.input('cellphone')
       if (my_cell == cellphone){
         const data =  cliente[field] 
-        console.log(data) 
         return view.render('clientes.find' , {data})
       }
     }    

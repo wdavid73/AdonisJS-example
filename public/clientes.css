@@ -23,7 +23,7 @@ h1 , h2{
     width: 50%;
     margin: 0 auto;
     margin-top: 3%;
-    animation: slideUp 1s cubic-bezier(0.19, 1, 0.30, 1) 1.3s forwards;
+    
 }
 .form-find{
     width: 35%;
@@ -46,4 +46,10 @@ h1 , h2{
     text-decoration: none;
     margin : 0 auto;
     margin-top : 10px;
+}
+
+.messageError{
+    color:red;
+    font-family: Lobster;
+    font-size: 17px ;
 }
