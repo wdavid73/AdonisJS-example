@@ -1,6 +1,6 @@
 'use strict'
 
-class AlquilerStore {
+class ValidatorAlquiler {
   get rules () {
     return {
       date_delivery : 'date|required',
@@ -11,12 +11,12 @@ class AlquilerStore {
 
   get messages(){
     return {
-      'value.required' : 'Porfavor el valor del alquiler',
+      'value.required' : 'Porfavor ingrese correctamente el valor del alquiler',
       'value.min' : 'El valor del alquileres debe ser igual o mayor a $10.000',
-      'value.max' : 'El valor del alquileres debe ser igual o mayor a $999.999',
+      'value.max' : 'El valor del alquileres debe ser igual o menor a $999.999',
 
-      'date_delivery.required' : 'Porfavor la Fecha de Entrega',
-      'return_date.required' : 'Porfavor la Fecha de Devolucion',
+      'date_delivery.required' : 'Porfavor ingrese la Fecha de Entrega',
+      'return_date.required' : 'Porfavor ingrese la Fecha de Devolucion',
 
     }
   }
@@ -28,4 +28,4 @@ class AlquilerStore {
   }
 }
 
-module.exports = AlquilerStore
+module.exports = ValidatorAlquiler

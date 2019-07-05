@@ -25,11 +25,11 @@ Route.group(() => {
     Route.get('/', 'AlquilerController.index').as('home.alquileres')
     //Registro
     Route.get('form' , 'AlquilerController.create')
-    Route.post('registro' , 'AlquilerController.store').validator('AlquilerStore')
+    Route.post('registro' , 'AlquilerController.store').validator('ValidatorAlquiler')
     Route.get('all' , 'AlquilerController.all')
     //ACtualizar
     Route.get('edit/:id' , 'AlquilerController.edit')
-    Route.put('update/:id' ,'AlquilerController.update')
+    Route.put('update/:id' ,'AlquilerController.update').validator('ValidatorAlquiler')
     //Borrado Logico
     Route.get('delete/:id' , 'AlquilerController.view_delete_l')
     Route.put('del/:id','AlquilerController.delete_l')

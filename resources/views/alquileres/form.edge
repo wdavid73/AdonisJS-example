@@ -27,15 +27,15 @@
               <div class="form-group">
 
               <label for="" class="mt-3">Fecha de Entrega</label>
-              <input type="date" class="form-control" name="date_delivery" value="{{ old('date_delivery' , '')}}">
+              <input type="date" class="form-control" name="date_delivery" value="{{ old('date_delivery' , '')}}" required>
                {{ elIf('<span class="messageError">$self</span> <br>', getErrorFor('date_delivery'), hasErrorFor('date_delivery'))  }}
 
                 <label for="" class="mt-3">Fecha de Devolucion</label>
-                <input type="date" class="form-control" name="return_date" value="{{ old('return_date' , '')}}">
+                <input type="date" class="form-control" name="return_date" value="{{ old('return_date' , '')}}" required>
                 {{ elIf('<span class="messageError">$self</span>', getErrorFor('return_date'), hasErrorFor('return_date'))  }}
 
 
-                <input type="number" class="form-control mt-3" placeholder="Valor del Alquiler" name="value" value="{{ old('value' , '')}}">
+                <input type="number" class="form-control mt-3" placeholder="Valor del Alquiler" name="value" value="{{ old('value' , '')}}" required>
                 {{ elIf('<span class="messageError">$self</span>', getErrorFor('value'), hasErrorFor('value'))  }}
 
                 <input type="submit" class="btn btn-primary btn-block mt-3" value="Submit">
