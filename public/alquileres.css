@@ -59,3 +59,9 @@ p{
     margin : 0 auto;
     margin-top : 10px;
 }
+
+.messageError{
+    color:red;
+    font-family: Lobster;
+    font-size: 17px ;
+}

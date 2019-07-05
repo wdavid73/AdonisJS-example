@@ -1,6 +1,7 @@
 'use strict'
 
 const Alquiler = use('App/Models/Alquiler')
+const {validate} = use('Validator')
 
 /** @typedef {import('@adonisjs/framework/src/Request')} Request */
 /** @typedef {import('@adonisjs/framework/src/Response')} Response */
@@ -56,11 +57,7 @@ class AlquilerController {
     alquiler.value = request.input('value')
 
     await alquiler.save()
-
     return response.redirect('/alquileres')
-
-    /*const alquiler = await Alquiler.create(request.only(['date_delivery' , 'return_date' , 'value']))
-    return response.redirect('alquileres.index')*/
 
   }
 

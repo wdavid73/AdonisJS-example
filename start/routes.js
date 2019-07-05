@@ -25,7 +25,7 @@ Route.group(() => {
     Route.get('/', 'AlquilerController.index').as('home.alquileres')
     //Registro
     Route.get('form' , 'AlquilerController.create')
-    Route.post('registro' , 'AlquilerController.store')
+    Route.post('registro' , 'AlquilerController.store').validator('AlquilerStore')
     Route.get('all' , 'AlquilerController.all')
     //ACtualizar
     Route.get('edit/:id' , 'AlquilerController.edit')
