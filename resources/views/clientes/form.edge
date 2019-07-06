@@ -26,16 +26,16 @@
                 <form action="/clientes/registro" method="POST">
                     {{ csrfField() }}
                     <div class="form-group">
-                        <input type="text" class="form-control mt-2" name="names" placeholder="Nombres" value="{{old('names' , '')}}" id="field-name" onkeyup="FieldName();">
+                        <input type="text" class="form-control mt-2" name="names" placeholder="Nombres" value="{{old('names' , '')}}" id="field-name" onkeyup="FieldName();" required>
                         {{ elIf('<span class="messageError">$self</span> <br>', getErrorFor('names'), hasErrorFor('names'))  }}
 
-                        <input type="string" class="form-control mt-2" name="lastnames" placeholder="Apellidos" value="{{old('lastnames' , '')}}" id="field-lastname" onkeyup="FieldLastname();">
+                        <input type="string" class="form-control mt-2" name="lastnames" placeholder="Apellidos" value="{{old('lastnames' , '')}}" id="field-lastname" onkeyup="FieldLastname();" required>
                         {{ elIf('<span class="messageError">$self</span> <br>', getErrorFor('lastnames'), hasErrorFor('lastnames'))  }}
 
-                        <input type="number" class="form-control mt-2" name="cellphone" placeholder="Telefono" value="{{old('cellphone' , '')}}" id="field-number" onkeyup="FieldNumber();">
+                        <input type="number" class="form-control mt-2" name="cellphone" placeholder="Telefono" value="{{old('cellphone' , '')}}" id="field-number" onkeyup="FieldNumber();" required>
                         {{ elIf('<span class="messageError">$self</span> <br>', getErrorFor('cellphone'), hasErrorFor('cellphone'))  }}
 
-                        <input type="email" class="form-control mt-2" name="address" placeholder="Correo Electronico" value="{{old('address' , '')}}" id="field-email" onkeyup="FieldEmail();">
+                        <input type="email" class="form-control mt-2" name="address" placeholder="Correo Electronico" value="{{old('address' , '')}}" id="field-email" onkeyup="FieldEmail();" required>
                         {{ elIf('<span class="messageError">$self</span> <br>', getErrorFor('address'), hasErrorFor('address'))  }}
 
                         <input type="submit" class="form-control mt-2 btn btn-success btn-block" value="Submit">
