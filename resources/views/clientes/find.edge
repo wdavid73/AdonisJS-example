@@ -28,7 +28,7 @@
       <div class="form-group">
         <form action="/clientes/buscado" method="POST">
           {{ csrfField() }}
-          <input type="number" class="form-control" placeholder="Ingrese el Numero de Telefono" name ="cellphone" value = "{{data.cellphone}}" required >
+          <input type="number" class="form-control" placeholder="Ingrese el Numero de Telefono" name ="cellphone" value = "{{data.cellphone}}" id="field-number" onkeyup="FieldNumber()" equired >
             {{ elIf('<span class="messageError">$self</span> <br>', getErrorFor('cellphone'), hasErrorFor('cellphone'))  }}
           <input type="submit" class="btn btn-info btn-block mt-2" value="Search">
         </form>
@@ -56,4 +56,13 @@
     </div>
   @endif
 </div>
+@endsection
+
+@section('js-extra')
+<script>
+    function FieldNumber() {
+        var element = document.getElementById('field-number')
+        element.value = element.value.replace(/[^0-9]+/,'')
+    }
+</script>
 @endsection
