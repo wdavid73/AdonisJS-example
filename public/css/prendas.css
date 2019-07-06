@@ -27,6 +27,7 @@ html, body {
 }
 
 .form-prenda{
+    width: 50%;
     font-family: Lobster;
     font-size: 30px;
     text-align : center;
