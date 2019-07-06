@@ -26,7 +26,16 @@
                 <form action="/clientes/registro" method="POST">
                     {{ csrfField() }}
                     <div class="form-group">
-                        <input type="text" class="form-control mt-2" name="names" placeholder="Nombres" value="{{old('names' , '')}}" >
+                        <input  
+                            type="text" 
+                            class="form-control mt-2" 
+                            name="names" 
+                            placeholder="Nombres" 
+                            value="{{old('names' , '')}}" 
+                            id="names" 
+                            onkeyup="FieldName();"
+                        >
+
                         {{ elIf('<span class="messageError">$self</span> <br>', getErrorFor('names'), hasErrorFor('names'))  }}
 
                         <input type="string" class="form-control mt-2" name="lastnames" placeholder="Apellidos" value="{{old('lastnames' , '')}}">
@@ -45,4 +54,15 @@
         </div>
     </div>
 
+@endsection
+
+
+@section('js-extra')
+<script>
+   function FieldName ()  {
+        var element = document.getElementById('names')
+        element.value = element.value.replace(/[^a-zA-Z ]/,'')
+        console.log(element.value)
+    }
+</script>
 @endsection
