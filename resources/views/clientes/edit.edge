@@ -27,16 +27,16 @@
       <form action="{{ ' /clientes/update/'+clientes_id.id+'?_method=PUT' }}" method="POST">
             {{ csrfField() }}
             <div class="form-group">
-                <input type="text" class="form-control mt-3" placeholder="Nombres" name="names" value="{{clientes_id.names}}" required>
+                <input type="text" class="form-control mt-3" placeholder="Nombres" name="names" value="{{clientes_id.names}}" id="field-name" onkeyup="FieldName()" required>
                 {{ elIf('<span class="messageError">$self</span> <br>', getErrorFor('names'), hasErrorFor('names'))  }}
 
-                <input type="text" class="form-control mt-3" placeholder="Apellidos" name="lastnames" value="{{clientes_id.lastnames}}" required>
+                <input type="text" class="form-control mt-3" placeholder="Apellidos" name="lastnames" value="{{clientes_id.lastnames}}" id="field-lastname" onkeyup="FieldLastname()" required>
                 {{ elIf('<span class="messageError">$self</span> <br>', getErrorFor('lastnames'), hasErrorFor('lastnames'))  }}
 
-                <input type="number" class="form-control mt-3" placeholder="Telefono" name="cellphone" value="{{clientes_id.cellphone}}" required>
+                <input type="number" class="form-control mt-3" placeholder="Telefono" name="cellphone" value="{{clientes_id.cellphone}}" id="field-number" onkeyup="FieldNumber()" required>
                 {{ elIf('<span class="messageError">$self</span> <br>', getErrorFor('cellphone'), hasErrorFor('cellphone'))  }}
 
-                <input type="email" class="form-control mt-3" placeholder="Correo Electronico" name="address" value="{{clientes_id.address}}" required>
+                <input type="email" class="form-control mt-3" placeholder="Correo Electronico" name="address" value="{{clientes_id.address}}" id="field-email" onkeyup="FieldEmail()" required>
                 {{ elIf('<span class="messageError">$self</span> <br>', getErrorFor('address'), hasErrorFor('address'))  }}
 
                 <input type="submit"  class="btn btn-primary btn-block mt-3" value="Update">
@@ -48,4 +48,26 @@
   </div>
 
 
+@endsection
+
+@section('js-extra')
+<script>
+    function FieldName() {
+        var element = document.getElementById('field-name')
+        element.value = element.value.replace(/[^a-z|A-Z ]+/,'')
+    }
+    function FieldLastname() {
+        var element = document.getElementById('field-lastname')
+        element.value = element.value.replace(/[^a-z|A-Z ]+/,'')
+    }
+    function FieldNumber() {
+        var element = document.getElementById('field-number')
+        element.value = element.value.replace(/[^0-9]+/,'')
+    }
+    function FieldEmail() {
+        var element = document.getElementById('field-email')
+        element.value = element.value.replace(/\S+@\S+\.\S+/,'')
+    }
+
+</script>
 @endsection
