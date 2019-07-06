@@ -27,7 +27,7 @@
                 <div class="form-group">
                     <form action="/prendas/registro" method="POST">
                         {{ csrfField() }}
-                        <input type="text" class="form-control" name="name" placeholder="Nombre de la Prenda" required>
+                        <input type="text" class="form-control" name="name" placeholder="Nombre de la Prenda" id="field-name" onkeyup="FieldName();" required>
                             <div class="form-row">
                                 <div class="col">
                                     <label for="" class="mt-3">Color:</label>
@@ -51,4 +51,13 @@
             </div>
     </div>
 </div>
+@endsection
+
+@section('js-extra')
+    <script>
+        function FieldName() {
+        var element = document.getElementById('field-name')
+        element.value = element.value.replace(/[^a-z|A-Z ]+/,'')
+    }
+    </script>
 @endsection
