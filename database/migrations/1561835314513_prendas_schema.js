@@ -10,8 +10,8 @@ class PrendasSchema extends Schema {
       table.string('name' , 100).notNullable()
       table.string('size' , 10).notNullable()
       table.string('color' , 50).notNullable()
-      table.integer('state').notNullable().defaultTo(1)
       table.timestamps()
+      table.integer('state').notNullable().defaultTo(1)
     })
   }
 

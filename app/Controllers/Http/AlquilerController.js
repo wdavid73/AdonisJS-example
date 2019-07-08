@@ -1,6 +1,9 @@
 'use strict'
 
 const Alquiler = use('App/Models/Alquiler')
+const Cliente = use('App/Models/Cliente')
+const Prenda = use('App/Models/Prenda')
+
 const {validate} = use('Validator')
 
 /** @typedef {import('@adonisjs/framework/src/Request')} Request */
@@ -17,7 +20,7 @@ class AlquilerController {
    *
    * @param {object} ctx
    * @param {Request} ctx.request
-   * @param {Response} ctx.response
+   * @param {Response} ctx.responseonst Prenda 
    * @param {View} ctx.view
    */
   async index ({ request, response, view }) {
@@ -37,7 +40,10 @@ class AlquilerController {
    */
   async create ({ request, response, view }) {
 
-    return view.render('alquileres.form')
+    const cliente = await Cliente.all()
+    const prenda = await Prenda.all()
+    return view.render('alquileres.form' , {cliente : cliente.toJSON() , prenda : prenda.toJSON()})
+    
     
   }
 
@@ -55,6 +61,8 @@ class AlquilerController {
     alquiler.date_delivery = request.input('date_delivery')
     alquiler.return_date = request.input('return_date')
     alquiler.value = request.input('value')
+    alquiler.clients_id = request.input('cliente_id')
+    alquiler.prendas_id = request.input('prendas_id')
 
     await alquiler.save()
     return response.redirect('/alquileres')

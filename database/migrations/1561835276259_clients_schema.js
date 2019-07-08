@@ -11,8 +11,6 @@ class UsersSchema extends Schema {
       table.string('lastnames' , 100).notNullable()
       table.string('cellphone' , 50).notNullable()
       table.string('address' , 100).notNullable()
-      table.integer('state').notNullable().defaultTo(1)
-      
       table.timestamps()
     })
   }
