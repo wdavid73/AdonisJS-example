@@ -121,8 +121,13 @@ class AlquilerController {
   async all ({view}){
 
     const alquileres = await Alquiler.all()
-    //console.log(alquileres.toJSON())
-    return view.render('alquileres.all' , {alquileres : alquileres.toJSON() })
+    const cliente = await Cliente.all()
+    const prenda = await Prenda.all()
+
+    return view.render('alquileres.all' , { alquileres : alquileres.toJSON(),
+                                            cliente : cliente.toJSON(),
+                                            prenda : prenda.toJSON()})
+    
   }
 
   async view_delete_l ({params , view }) {
