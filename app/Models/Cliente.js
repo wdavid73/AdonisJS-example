@@ -7,6 +7,10 @@ class Cliente extends Model {
     static get table (){
         return 'clients'
       }
+
+      AlquillerClientePrenda(){
+        return this.hasMany('App/Models/AlquilerClientePrenda')
+      }
 }
 
 module.exports = Cliente

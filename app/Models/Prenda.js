@@ -7,6 +7,10 @@ class Prenda extends Model {
     static get table (){
         return 'prendas'
       }
+
+      AlquillerClientePrenda(){
+        return this.hasMany('App/Models/AlquilerClientePrenda')
+      }
 }
 
 module.exports = Prenda

@@ -16,6 +16,10 @@ class Alquiler extends Model {
     return 'YYYY-MM-DD'
   }
 
+  AlquillerClientePrenda(){
+    return this.hasMany('App/Models/AlquilerClientePrenda')
+  }
+
 }
 
 module.exports = Alquiler
