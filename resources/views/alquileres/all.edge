@@ -10,10 +10,10 @@
 
 @section('content')
   <div class="table-resposive mt-4 text-center" id="all_alquilere">
-{{--
+
     <table class="table table-borderless table-hover">
         <thead class="thead-light">
-            <tr><th colspan="7" class="bg-info">
+            <tr><th colspan="8" class="bg-info">
                 <div class="row">
                   <div class="col-2">
                       <a href="/alquileres" class="card-title btn btn-link mt-2" style="text-decoration: none">
@@ -44,14 +44,18 @@
                 <td class="table-light">{{ alq.date_delivery }}</td>
                 <td class="table-light">{{ alq.return_date }}</td>
                 <td class="table-light">{{ alq.value }}</td>
-                CLientes
+              
                 <td class="table-light">
                   
                 </td>
-                   Prendas
+                   
                 <td class="table-light">
 
                 </td>
+                <td class="table-light">
+
+                  </td>
+  
 
                 <td class="table-light">
                     <a href="/alquileres/edit/{{alq.id}}" class="btn btn-primary mr-2 mt-2 mb-2 ml-2" style="text-decoration: none">Actualizar</a>
@@ -65,72 +69,6 @@
           @endeach
         </tbody>
       </table>
-      --}}
-
-
-      <div class="text-white">
-        {{alquileres}} <br>
-        {{cliente}} <br>
-       {{prenda}} <br>
-
-
-<p>-------------Alquileres----------------------------------</p>
-
-        @each((id , clients_id , prendas_id) in alquileres)
-            <p>{{id}}</p> 
-            <p>{{clients_id}}</p>
-            <p>{{prendas_id}}</p>
-          <br>
-        @else
-        @endeach
-
-<p>-----------------------CLientes------------------------</p>
-
-        @each(cli in cliente)
-          <p>{{cli.id}}</p>
-          <p>{{cli.names}}</p>
-          <p>{{cli.lastnames}}</p> <br>
-        @else
-        @endeach
-
-<p>--------------------------------Prendas------------</p>
-
-        @each(pre in prenda)
-          <p>{{pre.id}}</p>
-          <p>{{pre.name}}</p>
-          <p>{{pre.size}}</p><br>
-        @else
-          
-        @endeach
-<p>-------------------------------------------------------</p>
-
-
-
-        <ul>
-          @each(alq in alquileres)
-            
-          <li>
-            @each(cli in cliente)
-            {{cli.id}}
-            {{alq.id}}
-              @if(cli.id == alquileres.clients_id)
-                <p>paso</p>
-              @endif
-            @else
-              
-            @endeach
-
-          </li>
-
-
-
-          @else
-            
-          @endeach
-
-        </ul>
-          
-      </div>
       
   </div>
 
