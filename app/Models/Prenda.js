@@ -8,8 +8,8 @@ class Prenda extends Model {
         return 'prendas'
       }
 
-      AlquillerClientePrenda(){
-        return this.hasMany('App/Models/AlquilerClientePrenda')
+      Alquiler(){
+        return this.hasMany('App/Models/Alquiler', 'id' ,'alquileres_prendas_prendas_id')
       }
 }
 

@@ -5,12 +5,13 @@ const Schema = use('Schema')
 
 class UsersSchema extends Schema {
   up () {
-    this.create('users_cm', (table) => {
+    this.createIfNotExists('clients', (table) => {
       table.increments()
       table.string('names' , 100).notNullable()
       table.string('lastnames' , 100).notNullable()
       table.string('cellphone' , 50).notNullable()
       table.string('address' , 100).notNullable()
+      table.integer('state').notNullable().defaultTo(1)
       
       table.timestamps()
     })
