@@ -24,7 +24,7 @@
           </div>
       <div class="card-body">
 
-      <form action="{{ ' /alquileres/des/'+cliente.id+'?_method=DELETE' }}" method="POST">
+      <form action="{{ ' /clientes/des/'+cliente.id+'?_method=DELETE' }}" method="POST">
             {{ csrfField() }}
             <div class="form-group">
             <h2>Esta Seguro que desea borrar el cliente : {{cliente.names}} {{cliente.lastnames}} ?</h2>
@@ -39,7 +39,7 @@
                 </span>
 
                 <input type="submit" class="btn btn-danger btn-block mt-3" value="SI">
-                <a class="btn btn-success btn-block" href="/alquileres/all" style="text-decoration: none">No</a>
+                <a class="btn btn-success btn-block" href="/clientes/all" style="text-decoration: none">No</a>
             </div>
         </form>
       </div>

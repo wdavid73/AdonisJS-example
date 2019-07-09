@@ -107,7 +107,9 @@ class AlquilerController {
 
   async view_delete_l ({params , view }) {
     const alquileres_id = await Alquiler.find(params.id)
-    return view.render('alquileres.delete' , {alquileres_id})
+    const cliente = await Cliente.all()
+    const prenda = await Prenda.all()
+    return view.render('alquileres.delete' , {alquileres_id , cliente : cliente.toJSON() , prenda : prenda.toJSON()})
   }
 
   /**
@@ -152,7 +154,9 @@ class AlquilerController {
   
   async view_destroy ({params , view }) {
     const alquileres_id = await Alquiler.find(params.id)
-    return view.render('alquileres.destroy' , {alquileres_id})
+    const cliente = await Cliente.all()
+    const prenda = await Prenda.all()
+    return view.render('alquileres.destroy' , {alquileres_id, cliente : cliente.toJSON() , prenda : prenda.toJSON()})
   }
   /**
    * Delete a alquiler with id.
