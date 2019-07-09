@@ -13,7 +13,7 @@
 
     <table class="table table-borderless table-hover">
         <thead class="thead-light">
-            <tr><th colspan="8" class="bg-info">
+            <tr><th colspan="7" class="bg-info">
                 <div class="row">
                   <div class="col-2">
                       <a href="/alquileres" class="card-title btn btn-link mt-2" style="text-decoration: none">
@@ -30,9 +30,7 @@
             <th scope="col">Fecha de Entrega</th>
             <th scope="col">Fecha de Devolucion</th>
             <th scope="col">Valor del Alquiler</th>
-            <th scope="col">Nombre del Cliente</th>
-            <th scope="col">Prenda</th>
-            <th scope="col">Talla</th>
+            <th scope="col">Cliente - Prenda</th>
             <th scope="col">Options</th>
           </tr>
         </thead>
@@ -44,23 +42,13 @@
                 <td class="table-light">{{ alq.date_delivery }}</td>
                 <td class="table-light">{{ alq.return_date }}</td>
                 <td class="table-light">{{ alq.value }}</td>
-              
                 <td class="table-light">
-                  
-                </td>
-                   
-                <td class="table-light">
-
+                  <a href="/alquileres/info/cliente/{{alq.id}}" class="btn btn-info text-decoration-none">Ver informacion del Cliente y Prenda</a>
                 </td>
                 <td class="table-light">
-
-                  </td>
-  
-
-                <td class="table-light">
-                    <a href="/alquileres/edit/{{alq.id}}" class="btn btn-primary mr-2 mt-2 mb-2 ml-2" style="text-decoration: none">Actualizar</a>
-                    <a href="/alquileres/delete/{{alq.id}}" class="btn btn-warning mr-2 mt-2 mb-2 ml-2" style="text-decoration: none">[L]Borrar</a>
-                    <a href="/alquileres/destroy/{{alq.id}}" class="btn btn-danger mr-2 mt-2 mb-2 ml-2" style="text-decoration: none">[S]Borrar</a>
+                    <a href="/alquileres/edit/{{alq.id}}" class="btn btn-primary mr-2 mt-2 mb-2 ml-2 text-decoration-none" >Actualizar</a>
+                    <a href="/alquileres/delete/{{alq.id}}" class="btn btn-warning mr-2 mt-2 mb-2 ml-2 text-decoration-none" >[L]Borrar</a>
+                    <a href="/alquileres/destroy/{{alq.id}}" class="btn btn-danger mr-2 mt-2 mb-2 ml-2 text-decoration-none" >[S]Borrar</a>
                 </td>
                 </tr>                
             @endif

@@ -96,6 +96,20 @@ class AlquilerController {
 
   }
 
+  async details({params , view}){
+    
+    const id = await Alquiler.find(params.id)
+    const cliente = await Cliente.all()
+    const prenda = await Prenda.all()
+    return view.render('alquileres.info.info' , {id , cliente : cliente.toJSON() , prenda : prenda.toJSON()})
+  }
+
+
+  async view_delete_l ({params , view }) {
+    const alquileres_id = await Alquiler.find(params.id)
+    return view.render('alquileres.delete' , {alquileres_id})
+  }
+
   /**
    * Update alquiler details.
    * PUT or PATCH alquilers/:id
@@ -123,17 +137,10 @@ class AlquilerController {
     const alquileres = await Alquiler.all()
     const cliente = await Cliente.all()
     const prenda = await Prenda.all()
-
-    return view.render('alquileres.all' , { alquileres : alquileres.toJSON(),
-                                            cliente : cliente.toJSON(),
-                                            prenda : prenda.toJSON()})
-    
+    return view.render('alquileres.all' , { alquileres : alquileres.toJSON(),cliente : cliente.toJSON(),prenda : prenda.toJSON()})
   }
 
-  async view_delete_l ({params , view }) {
-    const alquileres_id = await Alquiler.find(params.id)
-    return view.render('alquileres.delete' , {alquileres_id})
-  }
+  
 
   async delete_l ({params , request , response }){
 

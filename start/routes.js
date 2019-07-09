@@ -36,6 +36,9 @@ Route.group(() => {
     //Borrado Permanente
     Route.get('destroy/:id' , 'AlquilerController.view_destroy')
     Route.delete('des/:id' , 'AlquilerController.destroy')
+
+    //Detalles
+    Route.get('info/cliente/:id' , 'AlquilerController.details')
 }).prefix('alquileres')
 
 /* $$$ Clientes $$$ */

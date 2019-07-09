@@ -1,0 +1,58 @@
+@layout('layouts.main')
+
+@section('style-extras')
+  {{style('css/alquileres')}}
+@endsection
+
+@section('title')
+  Alquileres - Info Cliente
+@endsection
+
+@section('content')
+
+    <div class="card-info-alquiler text-white">
+        <div class="card text-white bg-info">
+            <div class="row card-header ">
+                <div class="col-2">
+                    <a href="/alquileres/all" class="card-title btn btn-link mt-2" style="text-decoration: none">
+                        <img src="http://www.sabservicios.com.mx/bolsadetrabajo/public/sab/img/volver-2.png" alt="" width="40" height="40">
+                    </a>
+                </div>
+                <div class="col-8">
+                    <h2 class="card-title mt-3">Infomacion</h2>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col mt-2 mb-3">
+                        @each(cli in cliente)
+                            @if(cli.id == id.clients_id)
+                                <h4 id="title-info">Informacion del Cliente:</h4>
+                                <p class="card-text">
+                                    Nombre: {{cli.names}} {{cli.lastnames}} <br>
+                                    Telefono: {{cli.cellphone}} <br>
+                                    E-mail: {{cli.address}} <br>                       
+                                </p>
+                            @endif
+                        @else
+                        @endeach
+                    </div>
+                    <div class="col mt-2 mb-3">
+                        
+                        @each(pre in prenda)
+                            @if(pre.id == id.prendas_id)
+                                <h4 id="title-info">Informacion de la Prenda:</h4>
+                                <p class="card-text">
+                                    Prenda: {{pre.name}} <br>
+                                    Talla: {{pre.size}} <br>                     
+                                </p>
+                            @endif
+                        @else
+                        @endeach
+                    </div>
+                </div>
+                <a class="btn btn-dark btn-block" href="/alquileres/all" style="text-decoration: none">Volver</a>
+            </div>
+        </div>
+    </div>
+@endsection

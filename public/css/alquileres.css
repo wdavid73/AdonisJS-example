@@ -63,3 +63,11 @@ p{
     font-family: Lobster;
     font-size: 17px ;
 }
+.card-info-alquiler .card{
+    width: 80%;
+    margin: 30px auto auto;
+}
+#title-info{
+    font-family: Lobster;
+    font-size: 30px
+}
