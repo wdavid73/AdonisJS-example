@@ -12,22 +12,10 @@
 */
 
 /** @type {import('@adonisjs/lucid/src/Factory')} */
-const Factory = use('Factory')
+// const Factory = use('Factory')
 
 // Factory.blueprint('App/Models/User', (faker) => {
 //   return {
 //     username: faker.username()
 //   }
 // })
-
-//Without Lucid
-Factory.blueprint('App/Models/Alquiler' , (faker) =>{
-    return{
-        date_delivery : faker.date(),
-        return_date : faker.date(),
-        value : faker.integer()
-    }
-})
-
-//With Lucid
-//const alquiler = await Factory.model('App/Models/Alquiler').createMany(10)

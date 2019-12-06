@@ -24,7 +24,7 @@ Route.on('/contact').render('contact').as('contact')
 Route.group(() => {
     Route.get('/', 'AlquilerController.index').as('home.alquileres')
     //Registro
-    Route.get('form' , 'AlquilerController.create')
+    Route.get('registrer' , 'AlquilerController.create')
     Route.post('registro' , 'AlquilerController.store').validator('ValidatorAlquiler')
     Route.get('all' , 'AlquilerController.all')
     //ACtualizar
@@ -47,7 +47,7 @@ Route.group( () =>{
     Route.get('/' , 'ClienteController.index')
     Route.get('all' , 'ClienteController.all')
     //Registro
-    Route.get('form' , 'ClienteController.create')
+    Route.get('registrer' , 'ClienteController.create')
     Route.post('registro' , 'ClienteController.store').validator('ValidatorClient')
     //Actualizar
     Route.get('edit/:id' , 'ClienteController.edit')
@@ -59,7 +59,7 @@ Route.group( () =>{
     Route.get('destroy/:id' , 'ClienteController.view_destroy')
     Route.delete('des/:id' , 'ClienteController.destroy')
     //Buscar un Cliente
-    Route.get('buscar' , 'ClienteController.view_find')
+    Route.get('search' , 'ClienteController.view_find')
     Route.post('buscado' , 'ClienteController.find').validator('ValidatorClient')
 }).prefix('clientes')
 
@@ -70,7 +70,7 @@ Route.group( ()=>{
     Route.get('/' , 'PrendaController.index')
     Route.get('all' , 'PrendaController.all')
     //Registro
-    Route.get('form' , 'PrendaController.create')
+    Route.get('registrer' , 'PrendaController.create')
     Route.post('registro' , 'PrendaController.store')
     //Borrando Logico
     Route.get('delete/:id' , 'PrendaController.delete_log')
@@ -78,7 +78,7 @@ Route.group( ()=>{
     Route.get('destroy/:id' , 'PrendaController.destroy_view')
     Route.delete('des/:id' , 'PrendaController.destroy')
     //Buscar
-    Route.get('buscar' , 'PrendaController.view_find')
+    Route.get('search' , 'PrendaController.view_find')
     Route.post('buscado' , 'PrendaController.find')
 }).prefix('prendas')
 

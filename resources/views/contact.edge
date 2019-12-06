@@ -9,16 +9,24 @@
 @endsection
 
 @section('content')
-<div class="form-contact mt-5">
-    <form action="" method="">
-        <h2>Contact</h2>
-        <div class="form-group form-contact col-7 mt-7" >
-            <input type="text" class="form-control mt-3"  placeholder="Full Name" id="name">
-            <input type="number" class="form-control mt-3"placeholder="Cellphone" id="cellphone">
-            <label for=""class="mt-3 text-white">About:</label>
-            <textarea class="form-control" rows="3" id="about"></textarea>
-            <input type="submit" value="Submit" class="btn btn-warning btn-block mt-2">
-        </div>
-    </form>
+<div class="card bg-dark text-white mt-5 w-50 container">
+    <div class="card-header">
+        <h2 class="card-title text-center">Contact</h2>
+    </div>
+    <div class="card-body">
+        <form action="" method="">
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <input type="text" class="form-control mt-3"  placeholder="Full Name" id="name">
+                        <input type="number" class="form-control mt-3"placeholder="Cellphone" id="cellphone">
+                        <label for=""class="mt-3">About:</label>
+                        <textarea class="form-control" rows="3" id="about"></textarea>
+                        <input type="submit" value="Submit" class="btn btn-warning btn-block mt-2">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
 </div>
 @endsection

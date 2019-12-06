@@ -20,62 +20,80 @@
 </head>
 <body>
   <div class="navegation">
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="/">
+    
+    
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="/">
         <img src="https://png.pngtree.com/element_pic/16/11/02/bd886d7ccc6f8dd8db17e841233c9656.jpg" alt="" width="30" height="30">
-        </a>
+      </a>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
         <ul class="navbar-nav mr-auto">
-
-            <li class="nav-item dropdown btn btn-outline-success mr-2 ml-2">
-                <a class="nav-link dropdown-toggle text-decoration-none" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Ropa sobre Medida</a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item text-decoration-none" href="#">Ropa para Mujer</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item text-decoration-none" href="#">Ropa para Hombre</a>
-                </div>
+          
+          <li class="nav-item dropdown btn btn-outline-success mr-2 ml-2">
+            <a class="nav-link dropdown-toggle text-decoration-none" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Ropa sobre Medida</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item text-decoration-none" href="#">Ropa para Mujer</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item text-decoration-none" href="#">Ropa para Hombre</a>
+              </div>
             </li>
-
+            
             <li class="nav-item dropdown btn btn-outline-info mr-2 ml-2">
-                <a class="nav-link dropdown-toggle text-decoration-none" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Clientes</a>
+              <a class="nav-link dropdown-toggle text-decoration-none" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Clientes</a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item text-decoration-none" href="/clientes/registrer">Registrar Cliente</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item text-decoration-none" href="/clientes/search   ">Buscar Cliente</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item text-decoration-none" href="/clientes/all   ">Ver Todos los Clientes</a>
+                  <a class="dropdown-item text-decoration-none" href="/clientes/registrer">Registrar Cliente</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item text-decoration-none" href="/clientes/search   ">Buscar Cliente</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item text-decoration-none" href="/clientes/all   ">Ver Todos los Clientes</a>
                 </div>
-            </li>
-
-            <li class="nav-item dropdown btn btn-outline-secondary mr-2 ml-2">
+              </li>
+              
+              <li class="nav-item dropdown btn btn-outline-secondary mr-2 ml-2">
                 <a class="nav-link dropdown-toggle text-decoration-none" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Prendas</a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item text-decoration-none" href="/prendas/registrer">Registrar Prenda</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item text-decoration-none" href="/prendas/search">Buscar Prenda</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item text-decoration-none" href="/prendas/all   ">Ver Todas las Prendas</a>
-                </div>
-            </li>
-
-            <li class="nav-item dropdown btn btn-outline-primary mr-2 ml-2">
-                <a class="nav-link dropdown-toggle text-decoration-none" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Alquiler</a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item text-decoration-none" href="/alquileres/registrer">Registrar Alquiler</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item text-decoration-none" href="/alquileres/all">Ver Alquileres</a>
-                </div>
-            </li>
-        </ul>
-        </nav>
-  </div>
-
-    <div class="container">
-        @!section('content')
-    </div>
-</body>
-    @!section('js-extra')
-</html>
+                  </div>
+                </li>
+                
+                <li class="nav-item dropdown btn btn-outline-primary mr-2 ml-2">
+                  <a class="nav-link dropdown-toggle text-decoration-none" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Alquiler</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item text-decoration-none" href="/alquileres/registrer">Registrar Alquiler</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item text-decoration-none" href="/alquileres/all">Ver Alquileres</a>
+                    </div>
+                  </li>
+                  
+                  <li class="nav-item  btn btn-outline-warning mr-2 ml-2">
+                    <a class="nav-link text-decoration-none" 
+                    href="/contact" role="button"
+                    aria-haspopup="true" aria-expanded="false">
+                    Contact
+                  </a>
+                </li>
+              </ul>
+            </div>
+            </nav>
+          </div>
+          
+          <div class="container">
+            @!section('content')
+          </div>
+        </body>
+        @!section('js-extra')
+        </html>
+        

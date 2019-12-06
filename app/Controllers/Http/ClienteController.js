@@ -54,8 +54,12 @@ class ClienteController {
     for(var field in cliente){
       const cellphone = cliente[field].cellphone
       const my_cell = request.input('cellphone')
+      console.log(my_cell)
+      console.log(cellphone)
+      console.log("prueba")
       if (my_cell == cellphone){
         const data =  cliente[field] 
+        console.log(data)
         return view.render('clientes.find' , {data})
       }
     }    
@@ -80,7 +84,7 @@ class ClienteController {
 
     await cliente.save()
 
-    return response.redirect('/clientes/all')
+    return response.redirect('/')
   }
 
   /**

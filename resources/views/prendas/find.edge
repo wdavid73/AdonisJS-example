@@ -44,7 +44,9 @@
 </div>
 
 @if(data == [])
-    <h2 class="text-white mt-5" id="sinbusqueda">Porfavor Presione el Boton de buscar</h2>
+    <h2 class="mt-5" id="sinbusqueda">Porfavor Presione el Boton de buscar</h2>
+@elseif(data.length == 0)
+    <h2 class="mt-5" id="sinbusqueda">No hay Prendas con esa Talla</h2>
 @else
     <div class="table-buscar-prenda mt-5">
         <div class="table-resposive text-center">
