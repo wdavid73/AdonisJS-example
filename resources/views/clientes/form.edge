@@ -23,7 +23,7 @@
                         </div>
                       </div>
             <div class="card-body">
-                <form action="/clientes/registro" method="POST">
+                <form action="/api/v1/clientes/registro" method="POST">
                     {{ csrfField() }}
                     <div class="form-group">
                         <input type="text" class="form-control mt-2" name="names" placeholder="Nombres" value="{{old('names' , '')}}" id="field-name" onkeyup="FieldName();" required>

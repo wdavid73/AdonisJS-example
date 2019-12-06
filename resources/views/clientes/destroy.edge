@@ -24,7 +24,7 @@
           </div>
       <div class="card-body">
 
-      <form action="{{ ' /clientes/des/'+cliente.id+'?_method=DELETE' }}" method="POST">
+      <form action="{{ ' /api/v1/clientes/des/'+cliente.id+'?_method=DELETE' }}" method="POST">
             {{ csrfField() }}
             <div class="form-group">
             <h2>Esta Seguro que desea borrar el cliente : {{cliente.names}} {{cliente.lastnames}} ?</h2>

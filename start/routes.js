@@ -16,8 +16,8 @@
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
 
-Route.on('/').render('index')
-Route.on('/contact').render('contact').as('contact')
+Route.on('/api/v1').render('index')
+Route.on('/api/v1/contact').render('contact').as('contact')
 
 /* ### Alquileres ### */
 //Routing Usando Route.group
@@ -39,7 +39,7 @@ Route.group(() => {
 
     //Detalles
     Route.get('info/cliente/:id' , 'AlquilerController.details')
-}).prefix('alquileres')
+}).prefix('/api/v1/alquileres')
 
 /* $$$ Clientes $$$ */
 
@@ -61,7 +61,7 @@ Route.group( () =>{
     //Buscar un Cliente
     Route.get('search' , 'ClienteController.view_find')
     Route.post('buscado' , 'ClienteController.find').validator('ValidatorClient')
-}).prefix('clientes')
+}).prefix('/api/v1/clientes')
 
 
 /* %% Prendas %% */
@@ -80,7 +80,7 @@ Route.group( ()=>{
     //Buscar
     Route.get('search' , 'PrendaController.view_find')
     Route.post('buscado' , 'PrendaController.find')
-}).prefix('prendas')
+}).prefix('/api/v1/prendas')
 
 //Routing Basico
 //Route.get('/alquileres' , 'AlquilerController.index').as('home.alquileres')

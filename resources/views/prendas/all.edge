@@ -12,6 +12,7 @@
 
 <div class="row">
         @each(pre in prenda)  
+          @if(pre.state == 1)  
           <div class="col">
             <div class="card bg-dark text-white mt-3" style="width: 20rem ; margin:  0 auto; ">
               <div class="card-header">
@@ -22,22 +23,21 @@
                      <p class="badge badge-pill badge-primary" > #{{pre.id}}</p>
                     </div>
                     <div class="col-10">   
-                        <a href="/prendas/delete/{{pre.id}}" class="badge badge-pill badge-warning text-decoration-none">[L]Borrado</a>
-                        <a href="/prendas/destroy/{{pre.id}}" class="badge badge-pill badge-danger text-decoration-none">[S]Borrado</a>
+                        <a href="/api/v1/prendas/delete/{{pre.id}}" class="badge badge-pill badge-warning text-decoration-none">[L]Borrado</a>
+                        <a href="/api/v1/prendas/destroy/{{pre.id}}" class="badge badge-pill badge-danger text-decoration-none">[S]Borrado</a>
                         <a href="" class="badge badge-pill badge-success text-decoration-none">Ver</a>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="card-body">
-                  @if(pre.state == 1)  
                     <p >Prenda  : {{pre.name}}</p>
                     <p >Color   : {{pre.color}}</p>
                     <p >Talla   : {{pre.size}}</p>
-                @endif
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
+              @endif
         @else
           <h2> NO HAY CLIENTES REGISTRADOS</h2>
         @endeach

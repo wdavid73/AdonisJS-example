@@ -24,7 +24,7 @@
           </div>
       <div class="card-body">
 
-      <form action="{{ ' /clientes/update/'+clientes_id.id+'?_method=PUT' }}" method="POST">
+      <form action="{{ ' /api/v1/clientes/update/'+clientes_id.id+'?_method=PUT' }}" method="POST">
             {{ csrfField() }}
             <div class="form-group">
                 <input type="text" class="form-control mt-3" placeholder="Nombres" name="names" value="{{clientes_id.names}}" id="field-name" onkeyup="FieldName()" required>

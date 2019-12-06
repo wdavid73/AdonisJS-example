@@ -65,7 +65,7 @@ class AlquilerController {
     alquiler.prendas_id = request.input('prendas_id')
 
     await alquiler.save()
-    return response.redirect('/alquileres')
+    return response.redirect('/api/v1')
 
   }
 
@@ -129,7 +129,7 @@ class AlquilerController {
 
     await alquiler.save()
 
-    return response.redirect('/alquileres/all')
+    return response.redirect('/api/v1/alquileres/all')
 
 
   }
@@ -149,7 +149,7 @@ class AlquilerController {
     const alquiler = await Alquiler.find(params.id)
     alquiler.state = 0
     await alquiler.save()
-    return response.redirect('/alquileres/all')
+    return response.redirect('/api/v1/alquileres/all')
   }
   
   async view_destroy ({params , view }) {
@@ -169,7 +169,7 @@ class AlquilerController {
   async destroy ({ params, request, response }) {
     const alquiler = await Alquiler.find(params.id)
     await alquiler.delete()
-    return response.redirect('/alquileres/all')
+    return response.redirect('/api/v1/alquileres/all')
   }
 }
 

@@ -27,7 +27,7 @@
         </div>
             <div class="card-body">
                 <div class="form-group">
-                    <form action="/prendas/registro" method="POST">
+                    <form action="/api/v1/prendas/registro" method="POST">
                         {{ csrfField() }}
                         <input type="text" class="form-control" name="name" placeholder="Nombre de la Prenda" id="field-name" onkeyup="FieldName();" required>
                             <div class="form-row">

@@ -14,7 +14,7 @@
     <div class="card text-white bg-dark">
         <div class="row">
             <div class="col-2">
-                <a href="/alquileres/all" class="card-title btn btn-link mt-2" style="text-decoration: none">
+                <a href="/api/v1/alquileres/all" class="card-title btn btn-link mt-2" style="text-decoration: none">
                   <img src="http://www.sabservicios.com.mx/bolsadetrabajo/public/sab/img/volver-2.png" alt="" width="40" height="40">
                 </a>
             </div>
@@ -24,7 +24,7 @@
           </div>
       <div class="card-body">
 
-      <form action="{{ ' /alquileres/des/'+alquileres_id.id+'?_method=DELETE' }}" method="POST">
+      <form action="{{ ' /api/v1/alquileres/des/'+alquileres_id.id+'?_method=DELETE' }}" method="POST">
             {{ csrfField() }}
             <div class="form-group">
             <h2>Esta Seguro que desea borrar este Alquiler #{{alquileres_id.id}}</h2>

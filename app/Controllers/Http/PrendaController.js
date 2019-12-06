@@ -57,7 +57,7 @@ class PrendaController {
                           (size == 6) ? prenda.size = "2XL" : "Otra"
     
     await prenda.save()
-    return response.redirect('/prendas')
+    return response.redirect('/api/v1')
   }
 
   /**
@@ -112,7 +112,7 @@ class PrendaController {
   async destroy ({ params, request, response }) {
     const prenda = await Prenda.find(params.id)
     await prenda.delete()
-    return response.redirect('/prendas/all')
+    return response.redirect('/api/v1/prendas/all')
   }
 
   async all ({view}){
@@ -151,7 +151,7 @@ class PrendaController {
     const prenda = await Prenda.find(params.id)
     prenda.state = 0
     await prenda.save()
-    return response.redirect('/prendas/all')
+    return response.redirect('/api/v1/prendas/all')
   }
 }
 

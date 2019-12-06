@@ -25,7 +25,7 @@
         </div>
             <div class="card-body">
                 <div class="form-group">
-                    <form action="/prendas/buscado" method="POST">
+                    <form action="/api/v1/prendas/buscado" method="POST">
                         {{ csrfField() }}
                         <label for="" class=" mt-3">Seleccione una talla por la cual buscar una prenda: </label>
                         <select name="size" id="" class="form-control">
@@ -56,7 +56,7 @@
                         <th colspan="6" class="bg-info">
                             <div class="row">
                                 <div class="col-2">
-                                    <a href="/prendas">
+                                    <a href="/api/v1/prendas">
                                         <img src="http://www.sabservicios.com.mx/bolsadetrabajo/public/sab/img/volver-2.png" alt="" width="40" height="40">
                                     </a>
                                 </div>

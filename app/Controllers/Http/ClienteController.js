@@ -84,7 +84,7 @@ class ClienteController {
 
     await cliente.save()
 
-    return response.redirect('/')
+    return response.redirect('/api/v1')
   }
 
   /**
@@ -131,7 +131,7 @@ class ClienteController {
 
     await clientes.save()
 
-    return response.redirect('/clientes/all')
+    return response.redirect('/api/v1/clientes/all')
   }
 
   async view_delete_l ({params , view }) {
@@ -144,7 +144,7 @@ class ClienteController {
     const cliente = await Cliente.find(params.id)
     cliente.state = 0
     await cliente.save()
-    return response.redirect('/clientes/all')
+    return response.redirect('/api/v1/clientes/all')
   }
 
   /**
@@ -163,7 +163,7 @@ class ClienteController {
   async destroy ({ params, request, response }) {
     const cliente = await Cliente.find(params.id)
     await cliente.delete()
-    return response.redirect('/clientes/all')
+    return response.redirect('/api/v1/clientes/all')
   }
 }
 

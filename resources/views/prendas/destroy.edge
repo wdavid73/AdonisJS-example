@@ -14,7 +14,7 @@
     <div class="card text-white bg-dark">
         <div class="row">
             <div class="col-2">
-                <a href="/clientes/all" class="card-title btn btn-link mt-2" style="text-decoration: none">
+                <a href="/api/v1/clientes/all" class="card-title btn btn-link mt-2" style="text-decoration: none">
                   <img src="http://www.sabservicios.com.mx/bolsadetrabajo/public/sab/img/volver-2.png" alt="" width="40" height="40">
                 </a>
             </div>
@@ -24,7 +24,7 @@
           </div>
       <div class="card-body">
 
-      <form action="{{ ' /prendas/des/'+prenda.id+'?_method=DELETE' }}" method="POST">
+      <form action="{{ '/api/v1/prendas/des/'+prenda.id+'?_method=DELETE' }}" method="POST">
             {{ csrfField() }}
             <div class="form-group">
               <div class="card bg-dark">
