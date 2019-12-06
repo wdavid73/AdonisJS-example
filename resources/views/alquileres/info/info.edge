@@ -25,32 +25,28 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col mt-2 mb-3">
-                        @each(cli in cliente)
-                            @if(cli.id == id.clients_id)
-                                <h4 id="title-info">Informacion del Cliente:</h4>
+                        <h4 id="title-info">Informacion del Cliente:</h4>
                                 <p class="card-text">
-                                    {{cli.id}}
-                                    {{id.clients_id}}
-                                    Nombre: {{cli.names}} {{cli.lastnames}} <br>
-                                    Telefono: {{cli.cellphone}} <br>
-                                    E-mail: {{cli.address}} <br>                       
+                                    @if(cliente == '')
+                                        NO HAY CLIENTE
+                                    @else
+                                        Nombre: {{cliente.names}} {{cliente.lastnames}} <br>
+                                        Telefono: {{cliente.cellphone}} <br>
+                                        E-mail: {{cliente.address}} <br>                      
+                                    @endif    
                                 </p>
-                            @endif
-                        @else
-                        @endeach
+                        
                     </div>
                     <div class="col mt-2 mb-3">
-                        
-                        @each(pre in prenda)
-                            @if(pre.id == id.prendas_id)
-                                <h4 id="title-info">Informacion de la Prenda:</h4>
+                        <h4 id="title-info">Informacion de la Prenda:</h4>
                                 <p class="card-text">
-                                    Prenda: {{pre.name}} <br>
-                                    Talla: {{pre.size}} <br>                     
+                                    @if(prenda == '')
+                                        NO HAY PRENDA
+                                    @else
+                                        Prenda: {{prenda.name}} <br>
+                                        Talla: {{prenda.size}} <br> 
+                                    @endif                
                                 </p>
-                            @endif
-                        @else
-                        @endeach
                     </div>
                 </div>
                 <a class="btn btn-dark btn-block" href="/api/v1/alquileres/all" style="text-decoration: none">Volver</a>

@@ -9,7 +9,6 @@
 @endsection
 
 @section('content')
-  
   <div class="form-alquiler">
     <div class="card text-white bg-dark">
         <div class="row">
@@ -39,33 +38,32 @@
                 <span>
                   <h4>Infomacion del Cliente - Prenda</h4>
                   {{--Cliente--}}
-                  @each(cli in cliente)
-                    @if(alquileres_id.clients_id == cli.id)
                       <p>
-                        Nombre del cliente: {{cli.names}} {{cli.lastnames}} <br>
-                        Telefono: {{cli.cellphone}} <br>
-                        E-mail: {{cli.address}}
+                        @if(cliente == '')
+                          NO HAY CLIENTE
+                        @else
+                          Nombre del cliente: {{cliente.names}} {{cliente.lastnames}} <br>
+                          Telefono: {{cliente.cellphone}} <br>
+                          E-mail: {{cliente.address}}
+                        @endif
+                        
                       </p>
-                    @endif
-                  @else 
-                    <h5>Tiene relacion con algun cliente</h5>
-                  @endeach
                   {{--Prenda--}}
-                  @each(pre in prenda)
-                    @if(alquileres_id.prendas_id == pre.id)
                       <p>
-                        Nombre de la prenda: {{pre.name}}<br>
-                        Talla: {{pre.size}}
+                        @if(prenda == '')
+                          NO HAY PRENDA
+                        @else
+                          Nombre de la prenda: {{prenda.name}}<br>
+                          Talla: {{prenda.size}}
+                        @endif
+                        
                       </p>
-                    @endif
-                  @else 
-                    <h5>Tiene relacion con algun cliente</h5>
-                  @endeach
+                    
                 </span>
                 
 
                 <input type="submit" class="btn btn-danger btn-block mt-3" value="SI">
-                <a class="btn btn-success btn-block" href="/alquileres/all" style="text-decoration: none">No</a>
+                <a class="btn btn-success btn-block" href="/api/v1/alquileres/all" style="text-decoration: none">No</a>
             </div>
         </form>
       </div>

@@ -97,19 +97,48 @@ class AlquilerController {
   }
 
   async details({params , view}){
-    
     const id = await Alquiler.find(params.id)
     const cliente = await Cliente.all()
+    const cli = cliente.toJSON()
     const prenda = await Prenda.all()
-    return view.render('alquileres.info.info' , {id , cliente : cliente.toJSON() , prenda : prenda.toJSON()})
+    const pre = prenda.toJSON()
+    let p = '' , c = ''
+
+    cli.forEach(cliente => {
+      if (cliente.id == id.clients_id){
+        c = cliente
+      }
+    });
+
+    pre.forEach(prenda => {
+      if ( prenda.id == id.prendas_id){
+        p = prenda
+      }
+    })
+    return view.render('alquileres.info.info' , {cliente : c , prenda : p})
   }
 
 
   async view_delete_l ({params , view }) {
     const alquileres_id = await Alquiler.find(params.id)
     const cliente = await Cliente.all()
+    const cli = cliente.toJSON()
     const prenda = await Prenda.all()
-    return view.render('alquileres.delete' , {alquileres_id , cliente : cliente.toJSON() , prenda : prenda.toJSON()})
+    const pre = prenda.toJSON()
+    let p = '' , c = ''
+
+    cli.forEach(cliente => {
+      if (cliente.id == alquileres_id.clients_id){
+        c = cliente
+      }
+    });
+
+    pre.forEach(prenda => {
+      if ( prenda.id == alquileres_id.prendas_id){
+        p = prenda
+      }
+    })
+    return view.render('alquileres.delete' , {alquileres_id, cliente : c , prenda : p})
   }
 
   /**
@@ -155,8 +184,23 @@ class AlquilerController {
   async view_destroy ({params , view }) {
     const alquileres_id = await Alquiler.find(params.id)
     const cliente = await Cliente.all()
+    const cli = cliente.toJSON()
     const prenda = await Prenda.all()
-    return view.render('alquileres.destroy' , {alquileres_id, cliente : cliente.toJSON() , prenda : prenda.toJSON()})
+    const pre = prenda.toJSON()
+    let p = '' , c = ''
+
+    cli.forEach(cliente => {
+      if (cliente.id == alquileres_id.clients_id){
+        c = cliente
+      }
+    });
+
+    pre.forEach(prenda => {
+      if ( prenda.id == alquileres_id.prendas_id){
+        p = prenda
+      }
+    })
+    return view.render('alquileres.destroy' , {alquileres_id, cliente : c , prenda : p})
   }
   /**
    * Delete a alquiler with id.
