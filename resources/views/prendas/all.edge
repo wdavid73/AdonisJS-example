@@ -9,51 +9,37 @@
 @endsection
 
 @section('content')
-    <div class="table-prenda mt-5">
-        <div class="table-responsive text-center">
-            <table class="table table-borderless table-hover">
-                <thead class="thead-light">
-                    <tr>
-                        <th colspan="6" class="bg-info">
-                            <div class="row">
-                                <div class="col-2">
-                                    <a href="/prendas">
-                                        <img src="http://www.sabservicios.com.mx/bolsadetrabajo/public/sab/img/volver-2.png" alt="" width="40" height="40">
-                                    </a>
-                                </div>
-                                <div class="col-8">
-                                    <h2 class="card-title">Todas las Prendas</h2>
-                                </div>
-                            </div>
-                        </th>
-                    </tr>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Prenda</th>
-                        <th scope="col">Color</th>
-                        <th scope="col">Talla</th>
-                        <th scope="col">Opciones</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @each(pre in prenda)
-                    @if(pre.state == 1)
-                        <tr>
-                            <th class="table-light" scopte="row">{{pre.id}}</th>
-                            <td class="table-light">{{pre.name}}</td>
-                            <td class="table-light">{{pre.color}}</td>
-                            <td class="table-light">{{pre.size}}</td>
-                            <td class="table-light">
-                                <a href="/prendas/delete/{{pre.id}}" class="btn btn-warning text-decoration-none">[L]Borrado</a>
-                                <a href="/prendas/destroy/{{pre.id}}" class="btn btn-danger text-decoration-none">[S]Borrado</a>
-                                <a href="" class="btn btn-success text-decoration-none">Ver</a>
-                            </td>
-                        </tr>
-                    @endif
-                    @else
-                    @endeach
-                </tbody>
-            </table>
-        </div>
-    </div>
+
+<div class="row">
+        @each(pre in prenda)  
+          <div class="col">
+            <div class="card bg-dark text-white mt-3" style="width: 20rem ; margin:  0 auto; ">
+              <div class="card-header">
+                <div class="container text-center">
+                  <div class="row">
+      
+                    <div class="col-2">
+                     <p class="badge badge-pill badge-primary" > #{{pre.id}}</p>
+                    </div>
+                    <div class="col-10">   
+                        <a href="/prendas/delete/{{pre.id}}" class="badge badge-pill badge-warning text-decoration-none">[L]Borrado</a>
+                        <a href="/prendas/destroy/{{pre.id}}" class="badge badge-pill badge-danger text-decoration-none">[S]Borrado</a>
+                        <a href="" class="badge badge-pill badge-success text-decoration-none">Ver</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                  @if(pre.state == 1)  
+                    <p >Prenda  : {{pre.name}}</p>
+                    <p >Color   : {{pre.color}}</p>
+                    <p >Talla   : {{pre.size}}</p>
+                @endif
+              </div>
+            </div>
+          </div>
+        @else
+          <h2> NO HAY CLIENTES REGISTRADOS</h2>
+        @endeach
+      </div>
 @endsection

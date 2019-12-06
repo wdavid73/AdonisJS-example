@@ -9,53 +9,39 @@
 @endsection
 
 @section('content')
-  <div class="table-resposive mt-4 text-center" id="all_alquilere">
 
-    <table class="table table-borderless table-hover">
-        <thead class="thead-light">
-            <tr><th colspan="6" class="bg-info">
-              <div class="row">
-                <div class="col-2">
-                    <a href="/clientes" class="card-title btn btn-link mt-2" style="text-decoration: none">
-                      <img src="http://www.sabservicios.com.mx/bolsadetrabajo/public/sab/img/volver-2.png" alt="" width="40" height="40">
-                    </a>
-                </div>
-                <div class="col-8">
-                    <h2 class="card-title mt-3">Todos los Clientes</h2>
-                </div>
+<div class="row">
+  @each(cli in clientes)  
+    <div class="col">
+      <div class="card bg-dark text-white mt-3" style="width: 20rem ; margin:  0 auto; ">
+        <div class="card-header">
+          <div class="container text-center">
+            <div class="row">
+
+              <div class="col-2">
+               <p class="badge badge-pill badge-primary" > #{{cli.id}}</p>
               </div>
-            </th></tr>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Nombres</th>
-            <th scope="col">Apellidos</th>
-            <th scope="col">Telefono</th>
-            <th scope="col">E-mail</th>
-            <th scope="col">Options</th>
-          </tr>
-        </thead>
-        <tbody>
-            @each(cli in clientes)
-              @if(cli.state == 1)  
-                <tr>
-                  <th class="table-light" scope="row">{{ cli.id }}</th>
-                  <td class="table-light">{{ cli.names }}</td>
-                  <td class="table-light">{{ cli.lastnames }}</td>
-                  <td class="table-light">{{ cli.cellphone }}</td>
-                  <td class="table-light">{{ cli.address }}</td>
-                  <td class="table-light">
-                    <a href="/clientes/edit/{{cli.id}}" class="btn btn-primary mr-2 mt-2 mb-2 ml-2" style="text-decoration: none">Actualizar</a>
-                    <a href="/clientes/delete/{{cli.id}}" class="btn btn-warning mr-2 mt-2 mb-2 ml-2" style="text-decoration: none">[L]Borrar</a>
-                    <a href="/clientes/destroy/{{cli.id}}" class="btn btn-danger mr-2 mt-2 mb-2 ml-2" style="text-decoration: none">[S]Borrar</a>
-                  </td>
-                </tr>    
-              @endif
-            @else
-            <h2 class="text-white">No hay Clientes Registrados</h2>
-            @endeach
-        </tbody>
-      </table>
+              <div class="col-10">
+                <a href="/clientes/edit/{{cli.id}}" class="badge badge-pill badge-success" style="text-decoration: none">Actualizar</a>
+                <a href="/clientes/delete/{{cli.id}}" class="badge badge-pill badge-warning" style="text-decoration: none">[L]Borrar</a>
+                <a href="/clientes/destroy/{{cli.id}}" class="badge badge-pill badge-danger" style="text-decoration: none">[S]Borrar</a>   
+              </div>
+            </div>
 
-  </div>
+          </div>
+        </div>
+        <div class="card-body">
+            @if(cli.state == 1)  
+              <p>{{ cli.names }} {{ cli.lastnames }}</p>
+              <p>{{ cli.cellphone }}</p>
+              <p>{{ cli.address }}</p>
+          @endif
+        </div>
+      </div>
+    </div>
+  @else
+    <h2> NO HAY CLIENTES REGISTRADOS</h2>
+  @endeach
+</div>
 
 @endsection
